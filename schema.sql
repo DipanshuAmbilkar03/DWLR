@@ -30,4 +30,3 @@ CREATE TABLE water_level_analysis (
     number_wells_showing_no_change INT,
     percentage_wells_showing_no_change FLOAT
 );
-

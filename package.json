@@ -9,6 +9,8 @@
   "author": "DIPANSHU AMBILKAR",
   "license": "ISC",
   "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
     "mysql": "^2.18.1",
     "mysql2": "^3.12.0"
   }

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Level Analysis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        header {
+            background: #0077cc;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        section {
+            margin: 20px auto;
+            max-width: 600px;
+            text-align: center;
+        }
+        .count {
+            font-size: 1.5rem;
+            color: #333;
+        }
+        footer {
+            margin-top: 20px;
+            text-align: center;
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Water Level Analysis Dashboard</h1>
+    </header>
+
+    <section>
+        <p class="count">Total records in <b>water_level_analysis</b>: <strong><%= count %></strong></p>
+        <p>Data is being monitored and stored for analysis.</p>
+        <a href="/show">Refresh Data</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Digital Water Level Recorder Analysis</p>
+    </footer>
+</body>
+</html>
