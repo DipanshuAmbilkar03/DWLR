@@ -69,10 +69,9 @@ app.get("/", async (req, res) => {
     }
 });
 
-
-
 app.listen(8080, async () => {
     console.log("Listening on port 8080");
     // uncomment this to insert data again but delete the previous data first form the SQL database
     // await insertInitialData();
 });
+
