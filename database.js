@@ -17,6 +17,7 @@ const pool = mysql.createPool({
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "/views"));
 
+// Initial data to insert 
 const initialData = [
     ['DWLR001', 'Yamuna Bridge', 'Mathura', 'Uttar Pradesh', 'Yamuna', 27.4924, 77.6737, 320.00, 300.00, 'ACTIVE', 'WARNING'],
     ['DWLR002', 'Howrah Bridge', 'Kolkata', 'West Bengal', 'Hooghly', 22.5865, 88.3467, 450.00, 400.00, 'ACTIVE', 'CRITICAL'],
@@ -46,6 +47,7 @@ const query = `INSERT INTO gwl
     `;
 
 
+// this is the first data insertion function
 const insertInitialData = async () => {
     try {
         await pool.query(query, [initialData]);
@@ -68,7 +70,9 @@ app.get("/", async (req, res) => {
 });
 
 
+
 app.listen(8080, async () => {
     console.log("Listening on port 8080");
+    // uncomment this to insert data again but delete the previous data first form the SQL database
     // await insertInitialData();
 });
