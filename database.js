@@ -1,61 +1,74 @@
-const mysql = require('mysql2');
+const mysql = require("mysql2/promise");
 const express = require("express");
-const app = express();
-const path = require('path');
+const path = require("path");
 
+const app = express();
+
+// connection 
 const pool = mysql.createPool({
-    host: 'localhost',
-    user: 'root',
-    database: 'pbl_data',
-    password: 'cg06gh6385',
+    host: "localhost",
+    user: "root",
+    database: "pbl_data",
+    password: "cg06gh6385",
     waitForConnections: true,
-    connectionLimit: 10,
     queueLimit: 0,
 });
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "/views"));
 
-// let q1 = "INSERT INTO demo (station_id, recorded_at, water_level, status, notes) VALUES ?";
-// let data1 = [
-//     [101, '2025-01-20 08:00:00', 5.2, 'normal', 'Steady water level'],
-//     [102, '2025-01-20 08:15:00', 7.8, 'warning', 'Close to critical level'],
-//     [103, '2025-01-20 08:30:00', 9.5, 'critical', 'Immediate attention required'],
-//     [104, '2025-01-20 08:45:00', 4.5, 'normal', null],
-//     [105, '2025-01-20 09:00:00', 6.0, 'warning', 'Rainfall observed in nearby area']
-// ];
-
-let q2 = `INSERT INTO water_level_analysis (sl_no, state_ut, number_of_wells_analysed, number_rise_0_2_m, percentage_rise_0_2_m, number_rise_2_4_m, percentage_rise_2_4_m, number_rise_4_m, percentage_rise_4_m, number_fall_0_2_m, percentage_fall_0_2_m, number_fall_2_4_m, percentage_fall_2_4_m, number_fall_4_m, percentage_fall_4_m, number_rise, percentage_rise, number_fall, percentage_fall, number_wells_showing_no_change, percentage_wells_showing_no_change) VALUES ?`;
-let data2 = [
-    [1, "Andaman and Nicobar", 99, 70, 70.7, 2, 2, 0, 0, 26, 26.3, 0, 0, 0, 0, 72, 72.7, 26, 26.3, 1, 1],
-    [2, "Andhra Pradesh", 662, 335, 50.6, 91, 13.7, 65, 9.8, 157, 23.7, 11, 1.7, 3, 0.5, 491, 74.2, 171, 25.8, 0, 0],
-    [3, "Arunachal Pradesh", 9, 1, 11.1, 0, 0, 0, 0, 7, 77.8, 1, 11.1, 0, 0, 1, 11.1, 8, 88.9, 0, 0],
-    [4, "Assam", 163, 84, 51.5, 2, 1.2, 1, 0.6, 72, 44.2, 2, 1.2, 2, 1.2, 87, 53.4, 76, 46.6, 0, 0],
-    [5, "Bihar", 638, 291, 45.6, 19, 3, 4, 0.6, 279, 43.7, 36, 5.6, 9, 1.4, 314, 49.2, 324, 50.8, 0, 0],
-    [6, "Chandigarh", 14, 4, 28.6, 1, 7.1, 0, 0, 5, 35.7, 2, 14.3, 2, 14.3, 5, 35.7, 9, 64.3, 0, 0],
-    [7, "Chhattisgarh", 757, 386, 51, 86, 11.4, 20, 2.6, 214, 28.3, 36, 4.8, 14, 1.8, 492, 65, 264, 34.9, 1, 0.1],
-    [8, "Dadra and Nagar Haveli", 15, 9, 60, 0, 0, 0, 0, 5, 33.3, 1, 6.7, 0, 0, 9, 60, 6, 40, 0, 0],
-    [9, "Daman and Diu", 7, 4, 57.1, 0, 0, 0, 0, 3, 42.9, 0, 0, 0, 0, 4, 57.1, 3, 42.9, 0, 0],
-    [10, "Delhi", 84, 31, 36.9, 11, 13.1, 18, 21.4, 12, 14.3, 6, 7.1, 6, 7.1, 60, 71.4, 24, 28.6, 0, 0]
+const initialData = [
+    ['DWLR001', 'Yamuna Bridge', 'Mathura', 'Uttar Pradesh', 'Yamuna', 27.4924, 77.6737, 320.00, 300.00, 'ACTIVE', 'WARNING'],
+    ['DWLR002', 'Howrah Bridge', 'Kolkata', 'West Bengal', 'Hooghly', 22.5865, 88.3467, 450.00, 400.00, 'ACTIVE', 'CRITICAL'],
+    ['DWLR003', 'Godavari Barrage', 'Rajahmundry', 'Andhra Pradesh', 'Godavari', 17.0043, 81.7798, 220.00, 300.00, 'FAULTY', 'NORMAL'],
+    ['DWLR004', 'Mahanadi Dam', 'Cuttack', 'Odisha', 'Mahanadi', 20.5016, 85.8668, 260.00, 250.00, 'ACTIVE', 'WARNING'],
+    ['DWLR005', 'Periyar Dam', 'Idukki', 'Kerala', 'Periyar', 9.5300, 77.1701, 150.00, 250.00, 'ACTIVE', 'NORMAL'],
+    ['DWLR006', 'Sundarbans Barrage', 'Sunderban', 'West Bengal', 'Sundarbans', 21.8503, 88.3745, 180.00, 220.00, 'ACTIVE', 'WARNING'],
+    ['DWLR007', 'Narmada Canal', 'Ankleshwar', 'Gujarat', 'Narmada', 21.6212, 73.0147, 280.00, 270.00, 'ACTIVE', 'NORMAL'],
+    ['DWLR008', 'Krishna Barrage', 'Nalgonda', 'Telangana', 'Krishna', 17.0380, 79.2436, 340.00, 320.00, 'ACTIVE', 'WARNING'],
+    ['DWLR009', 'Teesta Dam', 'Kolkata', 'West Bengal', 'Teesta', 26.1185, 88.6307, 390.00, 375.00, 'ACTIVE', 'CRITICAL'],
+    ['DWLR010', 'Mahi River Bridge', 'Vadodara', 'Gujarat', 'Mahi', 22.2907, 73.1747, 260.00, 250.00, 'ACTIVE', 'NORMAL'],
+    ['DWLR011', 'Saraswati River', 'Haryana', 'Haryana', 'Saraswati', 29.0583, 75.7741, 180.00, 160.00, 'ACTIVE', 'WARNING'],
+    ['DWLR012', 'Mekong Bridge', 'Mekong', 'Sikkim', 'Mekong', 27.2353, 88.6246, 210.00, 200.00, 'ACTIVE', 'NORMAL'],
+    ['DWLR013', 'Ganges Barrage', 'Kanpur', 'Uttar Pradesh', 'Ganges', 26.4475, 80.3307, 400.00, 390.00, 'ACTIVE', 'CRITICAL'],
+    ['DWLR014', 'Ravi River', 'Chandigarh', 'Punjab', 'Ravi', 30.7355, 76.7794, 150.00, 140.00, 'ACTIVE', 'NORMAL'],
+    ['DWLR015', 'Saraswati Dam', 'Haridwar', 'Uttarakhand', 'Saraswati', 29.9057, 78.1647, 200.00, 180.00, 'FAULTY', 'NORMAL'],
+    ['DWLR016', 'Ganga Barrage', 'Varanasi', 'Uttar Pradesh', 'Ganges', 25.3408, 83.0107, 330.00, 300.00, 'ACTIVE', 'WARNING'],
+    ['DWLR017', 'Yamuna Canal', 'Faridabad', 'Haryana', 'Yamuna', 28.4313, 77.3160, 290.00, 280.00, 'ACTIVE', 'NORMAL'],
+    ['DWLR018', 'Tungabhadra Dam', 'Hospet', 'Karnataka', 'Tungabhadra', 15.2789, 76.4009, 350.00, 340.00, 'ACTIVE', 'CRITICAL'],
+    ['DWLR019', 'Brahmaputra River', 'Guwahati', 'Assam', 'Brahmaputra', 26.1445, 91.7362, 210.00, 200.00, 'ACTIVE', 'WARNING'],
+    ['DWLR020', 'Indus River', 'Lahore', 'Punjab', 'Indus', 24.8607, 67.0011, 180.00, 170.00, 'ACTIVE', 'NORMAL']
 ];
+
+const query = `INSERT INTO gwl 
+        (device_id, location_name, district, state, river_name, latitude, longitude, water_level, normal_range, device_status, alert_level) 
+        VALUES ?
+    `;
+
+
+const insertInitialData = async () => {
+    try {
+        await pool.query(query, [initialData]);
+        console.log("Initial data inserted into water_level_analysis table");
+    } catch (err) {
+        console.error("Error inserting data:", err.message);
+    }
+};
+
 
 app.get("/", async (req, res) => {
     try {
-        pool.query(q2, [data2], (err) => {
-            if (err) throw err;
-            console.log("Data inserted into water_level_analysis table");
-        });
-
-        pool.query(`SELECT COUNT(*) AS count FROM water_level_analysis`, (err, results) => {
-            if (err) throw err;
-            res.render("home.ejs", { count: results[0].count });
-        });
+        const [devices] = await pool.query("SELECT * FROM gwl");
+        console.log(devices);
+        res.render("home.ejs", { devices });
     } catch (err) {
-        console.error("Error:", err);
-        res.status(500).send("An error occurred!");
+        console.error("Error retrieving data:", err.message);
+        res.status(500).send("Error retrieving data.");
     }
 });
 
-app.listen(8080, () => {
+
+app.listen(8080, async () => {
     console.log("Listening on port 8080");
+    // await insertInitialData();
 });
