@@ -38,7 +38,7 @@ const case2Data = [
     ['DWLR006', 'Sundarbans Barrage', 'Sunderban', 'West Bengal', 'Sundarbans', 21.8503, 88.3745, 200.00, 220.00, 'ACTIVE', 'NORMAL'] // Warning status cleared
 ];
 const case3Data = [
-    ['DWLR007', 'Narmada Canal', 'Ankleshwar', 'Gujarat', 'Narmada', 21.6212, 73.0147, 300.00, 270.00, 'FAULTY', 'CRITICAL'], // Faulty sensor with critical water level
+    ['DWLR007', 'Narmada Canal', 'Ankleshwar', 'Gujarat', 'Narmada', 21.6212, 73.0147, 30.00, 270.00, 'FAULTY', 'CRITICAL'], // Faulty sensor with critical water level
     ['DWLR008', 'Krishna Barrage', 'Nalgonda', 'Telangana', 'Krishna', 17.0380, 79.2436, 340.00, 320.00, 'FAULTY', 'WARNING'], // Faulty with high water level
     ['DWLR009', 'Teesta Dam', 'Kolkata', 'West Bengal', 'Teesta', 26.1185, 88.6307, 390.00, 375.00, 'FAULTY', 'CRITICAL'] // Faulty with critical warning
 ];
