@@ -68,9 +68,15 @@ function detectAnomalies(data) {
 }
 
 app.get('/alerts', (req, res) => {
+    // initalize the data
     // const anomalies = detectAnomalies(initialData);
+
+    // data1
     // const anomalies = detectAnomalies(case1Data);
+    
+    // data2
     // const anomalies = detectAnomalies(case2Data);
+    
     const anomalies = detectAnomalies(case3Data);
 
     if (anomalies.length > 0) {
