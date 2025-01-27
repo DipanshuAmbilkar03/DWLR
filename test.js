@@ -1,11 +1,18 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const path = require('path');
 
 // Import datasets
 const { case1Data, case2Data, case3Data, initialData } = require("./model/data.js");
 
 const app = express();
 app.use(bodyParser.json());
+
+// Set EJS as the view engine
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Function to detect anomalies
 function detectAnomalies(data) {
@@ -30,22 +37,17 @@ function detectAnomalies(data) {
     return anomalies;
 }
 
-let currentDataset = case1Data; // Default dataset
+// Default dataset
+let currentDataset = case1Data; 
 
 app.get('/alerts', (req, res) => {
     const anomalies = detectAnomalies(currentDataset);
 
-    if (anomalies.length > 0) {
-        res.status(200).json({
-            message: 'Anomalies detected!',
-            anomalies,
-        });
-        console.log(anomalies);
-    } else {
-        res.status(200).json({
-            message: 'No anomalies detected.',
-        });
-    }
+    res.render('./test.ejs', {
+        message: anomalies.length > 0 ? 'Anomalies detected!' : 'No anomalies detected.',
+        anomalies,
+        currentDataset,
+    });
 });
 
 app.post('/switch-dataset', (req, res) => {
@@ -75,7 +77,6 @@ app.post('/switch-dataset', (req, res) => {
     });
 });
 
-// Start the server
 const PORT = 3000;
 app.listen(PORT, () => {
     console.log(`Server running at http://localhost:${PORT}`);
