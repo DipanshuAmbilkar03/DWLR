@@ -1,0 +1,107 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: white;
+    background-color: #1a1a1a;
+}
+
+h1, h2, h3 {
+    margin: 0;
+    font-weight: bold;
+}
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.navbar-title {
+    font-size: 24px;
+}
+
+.navbar-date {
+    color: #bbb;
+    font-size: 14px;
+}
+
+/* Layout */
+.main-container {
+    display: flex;
+    height: calc(100vh - 50px); /* Full height minus navbar */
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 25%;
+    background-color: #333;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.sidebar-title {
+    font-size: 18px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.alert-item {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.alert-red {
+    background-color: #dc2626;
+    color: white;
+}
+
+.alert-blue {
+    background-color: #2563eb;
+    color: white;
+}
+
+.alert-name {
+    font-size: 16px;
+}
+
+.alert-level, .alert-message {
+    font-size: 14px;
+}
+
+.no-alerts {
+    text-align: center;
+    color: #ccc;
+    margin-top: 20px;
+}
+
+/* Map Section */
+.map-container {
+    flex-grow: 1;
+    background-color: #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.map-placeholder {
+    color: #888;
+    font-size: 18px;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #000;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    color: #bbb;
+    font-size: 14px;
+}
