@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onyx-Strangler</title>
+    <link rel="stylesheet" href="./DwlrAlert.css">
+</head>
+<body>
+
+    <!-- Top Navigation -->
+    <header class="navbar">
+        <h1 class="navbar-title">DWLR Water Levels</h1>
+        <p class="navbar-date">Last Updated: <%= new Date().toLocaleDateString() %></p>
+    </header>
+
+    <!-- Main Layout -->
+    <div class="main-container">
+
+        <!-- Left Sidebar -->
+        <aside class="sidebar">
+            <h2 class="sidebar-title">Alerts</h2>
+            <% anomalies.forEach(dam => { %>
+            <div class="alert-item <%= dam.alert === 'RED' ? 'alert-red' : 'alert-blue' %>">
+                <h3 class="alert-name"><%= dam.name %></h3>
+                <p class="alert-level">Current Level: <%= dam.currentLevel %>%</p>
+                <p class="alert-message"><%= dam.message %></p>
+            </div>
+            <% }); %>
+            <% if (anomalies.length === 0) { %>
+            <p class="no-alerts">No anomalies detected.</p>
+            <% } %>
+        </aside>
+
+        <!-- Map Section -->
+        <main class="map-container">
+            <p class="map-placeholder">Map will be implemented here...</p>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Ajeenkya D.Y.Patil School Of Engineering</p>
+        <p>Team Jalpare</p>
+    </footer>
+
+</body>
+</html>
