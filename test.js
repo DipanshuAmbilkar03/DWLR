@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
-
+require('dotenv').config();
 // Import datasets
 const { case1Data, case2Data, case3Data, initialData } = require("./model/data.js");
 
@@ -36,6 +36,10 @@ function detectAnomalies(data) {
     });
     return anomalies;
 }
+
+app.get('/map', (req, res) => {
+    res.render('../Map/mapLibre.ejs', { MAP_API_KEY: process.env.MAP_API_KEY }); 
+});
 
 // Default dataset
 let currentDataset = case1Data; 

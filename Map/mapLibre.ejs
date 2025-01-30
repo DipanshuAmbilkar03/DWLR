@@ -13,14 +13,13 @@
 </head>
 <body>
     <div id="map"></div>
+
+    <!-- Inject API Key into JavaScript -->
     <script>
-        maptilersdk.config.apiKey = '9pARqr3Ao0THy6PMFB5w';
-        const map = new maptilersdk.Map({
-        container: 'map', // container's id or the HTML element to render the map
-        style: "streets-v2",
-        center: [81.9629,23.5937], // starting position [lng, lat]
-        zoom: 5, // starting zoom
-        });
+        const MAP_API_KEY = "<%= MAP_API_KEY %>";
     </script>
+    
+    <!-- Include the external script -->
+    <script src="/js/mapScript.js"></script>
 </body>
 </html>
