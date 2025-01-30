@@ -1,15 +1,17 @@
 const mysql = require("mysql2/promise");
 const express = require("express");
 const path = require("path");
-
 const app = express();
+const dotenv = require('dotenv');
+
+
 
 // connection 
 const pool = mysql.createPool({
     host: "localhost",
     user: "root",
     database: "pbl_data",
-    password: "cg06gh6385",
+    password: process.env_SQL_PASS,
     waitForConnections: true,
     queueLimit: 0,
 });
