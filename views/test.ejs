@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Onyx-Strangler</title>
     <link rel="stylesheet" href="./DwlrAlert.css">
+    <script src="https://cdn.maptiler.com/maptiler-sdk-js/v3.0.1/maptiler-sdk.umd.min.js"></script>
+    <link href="https://cdn.maptiler.com/maptiler-sdk-js/v3.0.1/maptiler-sdk.css" rel="stylesheet" />
+    <style>
+        body { margin: 0; padding: 0; }
+        #map { position: absolute; top: 0; bottom: 0; width: 100%; }
+    </style>
 </head>
 <body>
 
@@ -34,7 +40,10 @@
 
         <!-- Map Section -->
         <main class="map-container">
-            <p class="map-placeholder">Map will be implemented here...</p>
+            <div id="map"></div>
+            <script>
+                const MAP_API_KEY = "<%= MAP_API_KEY %>";
+            </script>            
         </main>
     </div>
 
@@ -44,5 +53,6 @@
         <p>Team Jalpare</p>
     </footer>
 
+    <script src="../public/js/mapScript.js"></script>
 </body>
 </html>

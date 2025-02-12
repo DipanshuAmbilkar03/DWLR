@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 require('dotenv').config();
+
 // Import datasets
 const { case1Data, case2Data, case3Data, initialData } = require("./model/data.js");
 
@@ -46,11 +47,13 @@ let currentDataset = case1Data;
 
 app.get('/alerts', (req, res) => {
     const anomalies = detectAnomalies(currentDataset);
+    console.log("MAP_API_KEY:", process.env.MAP_API_KEY);
 
     res.render('./test.ejs', {
         message: anomalies.length > 0 ? 'Anomalies detected!' : 'No anomalies detected.',
         anomalies,
         currentDataset,
+        MAP_API_KEY: process.env.MAP_API_KEY,
     });
 });
 
