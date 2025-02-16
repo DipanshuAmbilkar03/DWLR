@@ -2,8 +2,8 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    color: white;
-    background-color: #1a1a1a;
+    color: #4A628A;
+    background-color: #DFF2EB;
 }
 
 h1, h2, h3 {
@@ -16,17 +16,19 @@ h1, h2, h3 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #000;
-    padding: 10px 20px;
+    background-color: #4A628A;
+    padding: 5px 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    /* opacity: 0; */
 }
 
 .navbar-title {
     font-size: 24px;
+    color: #DFF2EB;
 }
 
 .navbar-date {
-    color: #bbb;
+    color: #B9E5E8;
     font-size: 14px;
 }
 
@@ -39,8 +41,8 @@ h1, h2, h3 {
 /* Sidebar Styles */
 .sidebar {
     width: 20%;
-    background-color: #333;
-    padding: 20px;
+    background-color: #7AB2D3;
+    padding: 10px;
     overflow-y: auto;
 }
 
@@ -48,6 +50,7 @@ h1, h2, h3 {
     font-size: 18px;
     margin-bottom: 15px;
     text-align: center;
+    color: #DFF2EB;
 }
 
 .alert-item {
@@ -57,12 +60,12 @@ h1, h2, h3 {
 }
 
 .alert-red {
-    background-color: #dc2626;
+    background-color: #e63946;
     color: white;
 }
 
 .alert-blue {
-    background-color: #2563eb;
+    background-color: #457b9d;
     color: white;
 }
 
@@ -76,32 +79,57 @@ h1, h2, h3 {
 
 .no-alerts {
     text-align: center;
-    color: #ccc;
+    color: #B9E5E8;
     margin-top: 20px;
 }
 
 /* Map Section */
 .map-container {
     flex-grow: 1;
-    background-color: #222;
+    background-color: #B9E5E8;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .map-placeholder {
-    color: #888;
+    color: #4A628A;
     font-size: 18px;
 }
 
 /* Footer Styles */
 .footer {
-    background-color: #000;
+    background-color: #4A628A;
     text-align: center;
-    padding: 10px;
+    /* padding: 3px; */
     position: fixed;
     bottom: 0;
     width: 100%;
-    color: #bbb;
-    font-size: 14px;
+    color: #DFF2EB;
+    font-size: 10px;
+    height: 40px;
+}
+
+.side-bar-bottom {
+    background: #000;
+}
+/* Map Section */
+.map-container {
+    flex-grow: 1;
+    background-color: #B9E5E8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 100%;  /* Ensure it takes the full height available */
+}
+
+#map {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;  /* Ensure the map takes the full height and width of the container */
 }
