@@ -21,7 +21,7 @@ function detectAnomalies(data) {
     data.forEach(row => {
         const [id, name, location, state, river, lat, lng, currentLevel, threshold, status, alert] = row;
 
-        if (currentLevel > threshold) {
+        if (currentLevel < threshold) {
             anomalies.push({
                 id,
                 name,
@@ -45,17 +45,19 @@ app.get('/map', (req, res) => {
 // Default dataset
 let currentDataset = case1Data; 
 
-app.get('/alerts', (req, res) => {
-    const anomalies = detectAnomalies(currentDataset);
-    console.log("MAP_API_KEY:", process.env.MAP_API_KEY);
+    app.get('/alerts', (req, res) => {
+        const anomalies = detectAnomalies(currentDataset);
+        console.log("MAP_API_KEY:", process.env.MAP_API_KEY);
+        console.log(typeof maptilersdk);
 
-    res.render('./test.ejs', {
-        message: anomalies.length > 0 ? 'Anomalies detected!' : 'No anomalies detected.',
-        anomalies,
-        currentDataset,
-        MAP_API_KEY: process.env.MAP_API_KEY,
+        res.render('./test.ejs', {
+            message: anomalies.length > 0 ? 'Anomalies detected!' : 'No anomalies detected.',
+            anomalies,
+            currentDataset,
+            MAP_API_KEY: process.env.MAP_API_KEY,
+        });
+        // res.render('../Map/mapLibre.ejs', { MAP_API_KEY: process.env.MAP_API_KEY });
     });
-});
 
 app.post('/switch-dataset', (req, res) => {
     const { dataset } = req.body;

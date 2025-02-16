@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Onyx-Strangler</title>
+    <title>DWLR - Water Level Alert System </title>
     <link rel="stylesheet" href="./DwlrAlert.css">
     <script src="https://cdn.maptiler.com/maptiler-sdk-js/v3.0.1/maptiler-sdk.umd.min.js"></script>
     <link href="https://cdn.maptiler.com/maptiler-sdk-js/v3.0.1/maptiler-sdk.css" rel="stylesheet" />
@@ -36,6 +36,10 @@
             <% if (anomalies.length === 0) { %>
             <p class="no-alerts">No anomalies detected.</p>
             <% } %>
+
+            <div class="side-bar-bottom">
+                stats
+            </div>
         </aside>
 
         <!-- Map Section -->
@@ -43,16 +47,15 @@
             <div id="map"></div>
             <script>
                 const MAP_API_KEY = "<%= MAP_API_KEY %>";
-            </script>            
+            </script>
         </main>
     </div>
 
     <!-- Footer -->
     <footer class="footer">
         <p>Ajeenkya D.Y.Patil School Of Engineering</p>
-        <p>Team Jalpare</p>
     </footer>
 
-    <script src="../public/js/mapScript.js"></script>
+    <script src="/js/mapScript.js"></script>
 </body>
 </html>
