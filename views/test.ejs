@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DWLR - Water Level Alert System </title>
+    <title>DWLR - Water Level Alert System</title>
     <link rel="stylesheet" href="./DwlrAlert.css">
     <script src="https://cdn.maptiler.com/maptiler-sdk-js/v3.0.1/maptiler-sdk.umd.min.js"></script>
     <link href="https://cdn.maptiler.com/maptiler-sdk-js/v3.0.1/maptiler-sdk.css" rel="stylesheet" />
@@ -45,9 +45,6 @@
         <!-- Map Section -->
         <main class="map-container">
             <div id="map"></div>
-            <script>
-                const MAP_API_KEY = "<%= MAP_API_KEY %>";
-            </script>
         </main>
     </div>
 
@@ -56,6 +53,47 @@
         <p>Ajeenkya D.Y.Patil School Of Engineering</p>
     </footer>
 
+    <!-- Map Script -->
+    <script>
+        const MAP_API_KEY = "<%= MAP_API_KEY %>";
+    
+        try {
+            // Parse coordinates safely from JSON
+            const coordinates = JSON.parse('<%- JSON.stringify(coordinates || []) %>');
+    
+            console.log("Coordinates received:", coordinates); // Debugging log
+    
+            maptilersdk.config.apiKey = MAP_API_KEY;
+    
+            const map = new maptilersdk.Map({
+                container: 'map',
+                style: maptilersdk.MapStyle.STREETS,
+                center: coordinates.length > 0 ? [coordinates[0].lng, coordinates[0].lat] : [78.9629, 20.5937], // Default to India
+                zoom: 5
+            });
+    
+            if (coordinates.length === 0) {
+                console.warn("No coordinates to plot.");
+            }
+    
+            coordinates.forEach(coord => {
+                if (coord.lng && coord.lat) {
+                    new maptilersdk.Marker()
+                        .setLngLat([coord.lng, coord.lat])
+                        .addTo(map);
+                    console.log("Plotted:", coord);
+                } else {
+                    console.error("Invalid coordinate:", coord);
+                }
+            });
+    
+        } catch (error) {
+            console.error("Error parsing coordinates:", error);
+        }
+    </script>
+        
+    
     <script src="/js/mapScript.js"></script>
+
 </body>
 </html>
