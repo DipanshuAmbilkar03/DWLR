@@ -23,7 +23,7 @@ function detectAnomalies(data) {
     data.forEach(row => {
         const [id, name, location, state, river, lat, lng, currentLevel, threshold, status, alert] = row;
 
-        if (currentLevel > threshold) {
+        if (currentLevel < threshold) {
             anomalies.push({
                 id,
                 name,
