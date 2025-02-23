@@ -4,7 +4,7 @@ const path = require('path');
 require('dotenv').config();
 
 // Import datasets
-const { case1Data, case2Data, case3Data, initialData } = require("./model/data.js");
+const { case1Data, case2Data, case3Data, case4Data, initialData } = require("./model/data.js");
 
 const app = express();
 app.use(bodyParser.json());
@@ -14,29 +14,28 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Default dataset (MOVED ABOVE where it's used)
-let currentDataset = case1Data; 
+// Default dataset
+let currentDataset = case1Data;
 
-// Function to detect anomalies
+// Function to detect anomalies based on "WATER" level
 function detectAnomalies(data) {
     const anomalies = [];
     data.forEach(row => {
-        const [id, name, location, state, river, lat, lng, currentLevel, threshold, status, alert] = row;
-
-        if (currentLevel < threshold) {
-            anomalies.push({
-                id,
-                name,
-                location,
-                state,
-                river,
-                threshold,
-                currentLevel,
-                lat,
-                lng,
-                alert,
-                message: 'Current level exceeds threshold!',
-            });
+        if (row.WATER !== undefined && row.LATITUDE !== undefined && row.LONGITUDE !== undefined) {
+            if (parseFloat(row.WATER) < 5) {
+                anomalies.push({
+                    state: row.STATE,
+                    district: row.DISTRICT,
+                    tehsil: row.TEHSIL,
+                    village: row.Village,
+                    site: row.Site,
+                    lat: row.LATITUDE,
+                    lng: row.LONGITUDE,
+                    wellType: row.WellType,
+                    waterLevel: parseFloat(row.WATER),
+                    message: 'Water level is below the threshold!',
+                });
+            }
         }
     });
     return anomalies;
@@ -58,7 +57,8 @@ app.post('/switch-dataset', (req, res) => {
         case '1': currentDataset = case1Data; break;
         case '2': currentDataset = case2Data; break;
         case '3': currentDataset = case3Data; break;
-        case '4': currentDataset = initialData; break;
+        case '4': currentDataset = case4Data; break;
+        case '5': currentDataset = initialData; break;
         default:
             return res.status(400).json({ message: 'Invalid dataset name.' });
     }
@@ -71,7 +71,6 @@ app.get('/alerts', (req, res) => {
     const anomalies = detectAnomalies(currentDataset);
     console.log("MAP_API_KEY:", process.env.MAP_API_KEY);
 
-    // Convert data into a usable format for coordinates
     const coordinates = anomalies.map(({ lat, lng }) => ({ lat: Number(lat), lng: Number(lng) }));
 
     console.log("Coordinates:", coordinates);
@@ -88,4 +87,3 @@ const PORT = 3000;
 app.listen(PORT, () => {
     console.log(`Server running at http://localhost:${PORT}`);
 });
-    
