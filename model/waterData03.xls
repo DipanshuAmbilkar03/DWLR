@@ -1,0 +1,313 @@
+STATE,DISTRICT,TEHSIL,Village,Site,LATITUDE,LONGITUDE,WellType,WATER
+Andhra Pradesh,Chittoor,Kurabalakota,Errapalle,Errapalle-NQM,13.67682,78.46081,Bore Well,7.20
+Andhra Pradesh,Chittoor,Yerpedu,Yerpedu,Palem-DW14,13.820228,79.584794,Dug Well,1.42
+Andhra Pradesh,East Godavari,Amalapuram,Amalapuram,Amalapuram,16.562,81.9956,Dug Well,1.20
+Andhra Pradesh,East Godavari,Thondangi,Tammayyapeta,Tammayyapeta-,17.2496,82.3708,Dug Well,2.10
+Andhra Pradesh,Guntur,Tadikonda,Ponnekallu,Ponnekallu,16.4043,80.4021,Dug Well,3.35
+Andhra Pradesh,Krishna,Vatsavai,Makkapeta,Makkapeta-DW14,16.92517,80.191503,Dug Well,3.50
+Andhra Pradesh,Nellore,Allur,Allur,Allur-DW13,14.6783333,80.0519444,Dug Well,0.23
+Andhra Pradesh,Nellore,Venkatachalam,Kanupur,Kanupur-dw14,14.328859,79.902709,Dug Well,1.38
+Andhra Pradesh,Prakasam,Kurichedu,Vengaiahpalem,Vengaiahpalem,15.9236,79.5942,Dug Well,1.80
+Andhra Pradesh,Srikakulam,Gara,Srikurmam,Srikurmam-DW13,18.272399,84.002811,Dug Well,2.72
+Andhra Pradesh,Visakhapatnam,Bheemunipatnam,Bhimunipatnam-2,Bhimunipatnam-2,17.887634,83.452065,Dug Well,5.10
+Andhra Pradesh,Vizianagaram,Balijipeta,Balajipet,Balajipet,18.611327,83.528598,Dug Well,3.10
+Andhra Pradesh,West Godavari,Buttayagudem,Gunjavaram,Gunjavaram-DW14,17.2036,81.4172,Dug Well,2.95
+Assam,Chirang,Sidli,Deosiri,Deosiri,26.7666667,90.4666667,Dug Well,8.29
+Assam,East Karbi Anglong,Bokajan,Manja Ow,Manja OW,25.9667,93.4382,Tube Well,2.06
+Assam,Jorhat,Jorhat East,Cinemora,Cinemora,26.7094444,94.2163889,Dug Well,3.40
+Assam,Lakhimpur,Boginadi,Kadam,Kadam,27.3,94.15,Dug Well,1.35
+Assam,Nalbari,Dhamdhama,Dhamdhama,Dhamdhama,26.5561111,91.4525,Dug Well,1.96
+Assam,West Karbi Anglong,Rongkhang,Kalonga,Kalonga,25.8619444,92.7683333,Dug Well,4.65
+Bihar,Begusarai,Bakhri,Manjaul,Manjaul,25.5625,86.1458333,Dug Well,4.90
+Bihar,Bhojpur,Barhara,Balua,Balua,25.4902778,84.5563889,Dug Well,8.50
+Bihar,Buxar,Itarhi,Mahila,Mahila,25.4697222,84.0394444,Dug Well,5.05
+Bihar,Gopalganj,Barauli,Barauli,Barauli,26.3791667,84.5875,Dug Well,2.65
+Bihar,Jehanabad,Karpi,Kinjer,Kinjer,25.2125,84.8291667,Dug Well,3.45
+Bihar,Kishanganj,Bahadurganj,Bahadurganj,Bahadurganj,26.2625,87.8375,Dug Well,3.37
+Bihar,Madhubani,Harlakhi,Baurahar Chowk,Baurahar Chowk,26.6391667,85.9847222,Dug Well,4.21
+Bihar,Muzaffarpur,Musahri,Japaha,Japaha,26.1436111,85.3905556,Dug Well,4.14
+Bihar,Nawada,Narhat,Khanwa,Khanwa,24.7341667,85.4194444,Dug Well,5.07
+Bihar,Patna,Maner,Maner,Maner,25.6375,84.8875,Dug Well,2.79
+Bihar,Purnia,Amour,Bansbari,Bansbari,25.9583333,87.7125,Dug Well,3.49
+Bihar,Saharsa,Sour Bazar,Adrahch,Adrahch,25.7822222,86.6847222,Dug Well,3.98
+Bihar,Saran,Manjhi,Manjhi 2,Manjhi 2,25.8372222,84.5763889,Dug Well,3.60
+Bihar,Sitamarhi,Sonbarsa,Bhutahi,Bhutahi,26.7269444,85.5497222,Dug Well,2.38
+Bihar,Supaul,Tribeniganj,Jadia,Jadia,26.0866667,87.0033333,Dug Well,2.50
+Chhattisgarh,Bastar,Bastar,Sonarpal,Sonarpal,19.260278,81.891667,Dug Well,6.19
+Chhattisgarh,Bilaspur,Kota,Banabel,Banabel,22.469444,82.104444,Dug Well,6.88
+Chhattisgarh,Bilaspur,Marwahi,Tendumuda,Tendumuda,23.056667,82.012222,Dug Well,3.10
+Chhattisgarh,Dhamtari,Dhamtari,Rudri Chowk,Rudri Chowk,20.680556,81.667222,Dug Well,2.00
+Chhattisgarh,Durg,Berla,Jeora,Jeora,21.637778,81.622778,Dug Well,8.31
+Chhattisgarh,Durg,Durg,Selud2,Selud2,21.1,81.419444,Bore Well,3.13
+Chhattisgarh,Durg,Saja,Kanhera,Kanhera,21.828056,81.456111,Dug Well,5.05
+Chhattisgarh,Janjgir - Champa,Pamgarh,Jewara,Jewara,21.852778,82.382778,Dug Well,3.10
+Chhattisgarh,Jashpur,Kasavel,Lamdund,Lamdund,22.633611,83.691944,Dug Well,3.80
+Chhattisgarh,Kawardha,Kawardha,Danganiya,Danganiya,21.963889,81.204167,Dug Well,4.35
+Chhattisgarh,Koriya,Sonhat,Bhainswar,Bhainswar,23.491667,82.269722,Dug Well,2.55
+Chhattisgarh,Raigarh,Dharmjaigarh,Durgapur,Durgapur,22.483889,83.159722,Dug Well,7.50
+Chhattisgarh,Raigarh,Pusaur,Aurda,Aurda,21.808333,83.399722,Dug Well,2.60
+Chhattisgarh,Raipur,Abhanpur,Gotiadih,Gotiadih,21.018056,81.678889,Dug Well,2.95
+Chhattisgarh,Raipur,Simga,Dhamarkhera,Dhamarkhera,21.690833,81.781389,Dug Well,2.25
+Chhattisgarh,Rajnandgaon,Rajnandgaon,Baghera,Baghera,21.186111,81.124167,Dug Well,4.25
+Chhattisgarh,Surguja,Bhaiyathan,Samouli,Samouli,23.402778,82.685833,Dug Well,5.25
+Chhattisgarh,Surguja,Rajpur,Karji,Karji,23.156667,83.108611,Dug Well,4.00
+Delhi,North,ALIPUR,Palla,Palla Zero RD,28.85805,77.19638,,9.45
+Delhi,West,PATEL NAGAR,Pusa,PUSA (NRL) Pz,28.63916,77.16222,,30.14
+Goa,South Goa,Canacona,Agonda Desaiwada,Agonda Desaiwada,15.041265,73.991069,Dug Well,4.80
+Gujarat,Ahmedabad,Viramgam,Viramgam,Viramgam2,23.1416667,72.0333333,Dug Well,2.66
+Gujarat,Banaskantha,Amirgadh,Amirgadh,Amirgadh,24.4055556,72.6416667,Dug Well,11.47
+Gujarat,Bharuch,Valia,Netrang,Netrang1,21.6333333,73.3666667,Dug Well,8.48
+Gujarat,Dohad,Devgad Baria,Khandania,Khandania,22.7041667,73.8375,Dug Well,11.17
+Gujarat,Jamnagar,Kalyanpur,Bhatiya,Bhatiya,22.0944444,69.2666667,Bore Well,3.55
+Gujarat,Junagadh,Mangrol,Maktupur,Maktupur1,21.1430556,70.0958333,Dug Well,7.30
+Gujarat,Kachchh,Lakhpat,Mata No Madh,Mata no madh,23.5333333,68.95,Dug Well,4.68
+Gujarat,Mahesana,Mahesana,Jotana,Jotana Pzii,23.4738889,72.2877778,Tube Well,12.39
+Gujarat,Narmada,Tilakwada,Agar,Agar(Rep)_Pz,22.0311111,73.6566667,Bore Well,13.22
+Gujarat,Porbandar,Kutiyana,Mocha,Mocha,21.3483333,69.8891667,Dug Well,3.75
+Gujarat,Rajkot,Maliya,Sarvad,Sarvad,23.0063889,70.7069444,Dug Well,1.32
+Gujarat,Sabarkantha,Talod,Boriya,Boriya,23.2427778,72.9408333,Dug Well,6.81
+Gujarat,Surendranagar,Chotila,Bamanbor,Bamanbor,22.4166667,71.0416667,Dug Well,5.60
+Gujarat,The Dangs,Dangs,Vazat Amba,Vazat Amba,20.8783333,73.5183333,Dug Well,4.38
+Haryana,Ambala,Ambala-I,Balana,Balana,30.3208333,76.7291667,Dug Well,0.89
+Haryana,Gurgaon,Farukhnagar,Fazilpur Badli,Fazilpur Badli-Pz,28.425,76.8583333,Tube Well,28.60
+Haryana,Jind,Narwana,Dhandauli,Dhandauli Pz,29.8125,76.15,Tube Well,52.11
+Haryana,Kurukshetra,Thanesar,Hathira,Hathira-PZ,29.8861111,76.7525,Tube Well,29.50
+Haryana,Rohtak,Sampla,Sampla,Sampla,28.7833333,76.7625,Dug Well,3.83
+Haryana,Sonipat,Sonipat,Pinana,Pinana,29.0611111,76.8333333,Dug Well,5.07
+Himachal Pradesh,Sirmaur,Paonta Sahib,Badripur,Badripur,30.4758333,77.6697222,Dug Well,12.39
+Jammu and,Jammu,Arnia,Sei Khurd,Sei Khurd,32.5075,74.724722,Dug Well,4.39
+Jammu and,Jammu,Khour,Khour,Khour,32.829436,74.517289,Dug Well,3.71
+Jammu and,Kathua,Heeranagar,Konthal,Konthal,32.422682,75.25847,Dug Well,5.27
+Jammu and,Rajouri,Naushera,Gahgrot,Gahgrot,33.097398,74.265002,Dug Well,6.21
+Jammu and,Samba,Parmandal,Maheen Chakran,Maheen Charkan,32.649728,74.986959,Dug Well,9.00
+Jharkhand,Bokaro,Chas,Bokaro Rly Station,Bokaro Rly Station,23.6588,86.0835,Dug Well,1.95
+Jharkhand,Dhanbad,Dhanbad,Purandih Jorapol,Purandih Jorapol,23.7825,86.4761,Dug Well,3.66
+Jharkhand,Godda,Poreyahat,Chamudih,Chamudih,24.6297,87.1294,Dug Well,8.19
+Jharkhand,Khunti,Karra,Lodhama,Lodhama,23.2375,85.1975,Dug Well,3.82
+Jharkhand,Pakur,Pakur,Vikrampur,Vikrampur,24.7614,87.6754,Dug Well,6.96
+Jharkhand,Ranchi,Lapung,Kakriya,Kakariya,23.1644,85.0271,Dug Well,6.18
+Jharkhand,Sahebganj,Sahibganj,Sakrigali,Sakrigali,25.2428,87.7125,Dug Well,6.76
+Karnataka,Bagalkot,Bilgi,Badgandi,Badagandi,##########,##########,Dug Well,4.21
+Karnataka,Belagavi,Chikodi,Nippani,Nippani1,##########,##########,Dug Well,8.95
+Karnataka,Belagavi,Raybag,Rayabag,Rayabag1,##########,##########,Dug Well,7.24
+Karnataka,Bijapur,Basavana Bagewadi,Ingaleshwar,Ingaleshwar,16.6500000,76.0167000,Dug Well,2.39
+Karnataka,Bijapur,Sindagi,Devanagao,Devanagao,##########,##########,Dug Well,11.00
+Karnataka,Chikkamagalur,Chikkamagalur,Kanati,Kanati,13.3083000,75.5833000,Dug Well,2.43
+Karnataka,Chikkamagalur,Narasimharajapura,Shanakarapura,Shanakarapura,13.7147000,75.4647000,Dug Well,8.40
+Karnataka,Dakshin Kannada,Bantval,Kaval Maduru,Kaval Maduru,12.9328000,75.1361000,Dug Well,8.90
+Karnataka,Dakshin Kannada,Mangalore,Permude,Permude,##########,##########,Dug Well,12.95
+Karnataka,Davanagere,Davanagere,Doddabathi,Doddabathi,14.4833000,75.8667000,Dug Well,7.30
+Karnataka,Dharwad,Kalghatgi,Kalaghatgi A,Kalaghatgi A,##########,##########,Dug Well,1.96
+Karnataka,Gulbarga,Chincholi,Chitaguppa,Chitaguppa,17.0811000,77.2006000,Dug Well,18.40
+Karnataka,Hassan,Arkalgud,Ramanathapura,Ramanathapura A,##########,##########,Dug Well,2.65
+Karnataka,Hassan,Holenarsipur,Kuppe,Kuppe,##########,##########,Dug Well,11.12
+Karnataka,Kodagu,Madikeri,Khagodu,Khagodu,##########,##########,Dug Well,3.00
+Karnataka,Kodagu,Virajpet,Thayagathoor,Thayagathoor,12.3400000,75.8669000,Dug Well,5.00
+Karnataka,Koppal,Yelburga,Talakal,Talakal,##########,##########,Dug Well,6.72
+Karnataka,Mysore,Heggadadevankote,Mulluru,Mulluru,11.9833000,76.4678000,Dug Well,10.90
+Karnataka,Mysore,Tirumakudal-,Somanathapura,Somanathapura,##########,##########,Dug Well,8.15
+Karnataka,Raichur,Sindhnur,Hanchihal,Hanchihal,15.2394000,76.6681000,Dug Well,2.40
+Karnataka,Shimoga,Hosanagara,Brahmeshwara,Brahmeshwara,##########,##########,Dug Well,8.30
+Karnataka,Shimoga,Tirthahalli,Kalmane,Kalmane,##########,##########,Dug Well,5.10
+Karnataka,Tumkur,Pavagada,Pavagada,Pavagada,14.1000000,77.2833000,Dug Well,1.77
+Karnataka,Udupi,Kundapura,Maravanthe,Maravanthe,13.7250000,74.6344000,Dug Well,9.00
+Karnataka,Uttara Kannada,Honavar,Gerusoppa Kpc Colony,Gerusoppa Kpc,14.2472,74.6506,Dug Well,4.45
+Karnataka,Uttara Kannada,Sirsi,Sirsi,Sirsi1,14.6250000,74.8736000,Dug Well,9.30
+Kerala,Alappuzha,Ambalapuzha,Vandanam,Vandanam,9.41366,76.3494,Dug Well,2.51
+Kerala,Ernakulam,Alangad,Kadungallur,Kadungallur,10.1153,76.3283,Dug Well,2.35
+Kerala,Ernakulam,Mulamthuruthy,Edakkatuvayal,Edakkatuvayal,9.87361111,76.4416667,Dug Well,10.30
+Kerala,Ernakulam,Vypin,Elamkunnapuzha,Vypeen,10.0192,76.2246,Dug Well,0.45
+Kerala,Idukki,Kattappana,Irattayar,Anavilasam,9.65377,77.1058,Dug Well,8.00
+Kerala,Kannur,Iritty,Mulakunnu,Muzhakunnu,11.9333333,75.6833333,Dug Well,2.79
+Kerala,Kannur,Taliparamba,Alacode,Alacode,10.9791,76.083,Dug Well,10.75
+Kerala,Kasaragod,Kanhangad,Panathadi,Panathur,12.4541667,75.3111111,Dug Well,7.84
+Kerala,Kasaragod,Kasaragod,Kasaragod,Anangoor,12.5131,75.005,Dug Well,15.50
+Kerala,Kollam,Anchal,Anchal,Anchal,8.92777778,76.9166667,Bore Well,7.76
+Kerala,Kollam,Karunagapally,Karunagapalli,Karunagapally-I,9.05833,76.5353,Dug Well,1.25
+Kerala,Kollam,Sasthamkotta,Sooranadu,Sooranadu,9.1,76.6208333,Dug Well,4.46
+Kerala,Kottayam,Madappally,Karukachal,Nedumkunnam,9.50761,76.6618,Dug Well,7.40
+Kerala,Kozhikode,Balusseri,Balusseri,Naduvannur,11.4829,75.7749,Dug Well,7.02
+Kerala,Kozhikode,Kunnamangalam,Kunnamangalam,Kunnamangalam,11.3047,75.8787,Dug Well,13.44
+Kerala,Malappuram,Kuttippuram,Marakkara,Kadampuzha,10.9443,76.0429,Dug Well,10.45
+Kerala,Malappuram,Thirur,Thirunavaya,Karathur,10.8713,75.959,Dug Well,10.00
+Kerala,Palakkad,Chittur,Ellissery,Panayur(Athikodu) Pz,10.7122,76.9017,Bore Well,5.70
+Kerala,Palakkad,Mannarkkad,Kalladikode,Kalladikode,10.8958333,76.5333333,Dug Well,9.00
+Kerala,Palakkad,Thrithala,Tannirkod,Tannirkod,10.775,76.0583333,Dug Well,7.80
+Kerala,Pathanamthitta,Mallappally,Kunnamthanam,Kunnamthanam1,9.43578,76.6116,Dug Well,13.48
+Kerala,Thiruvananthapuram,Attingal Municipality,Valakkad,Valakkad,8.68737,76.8654,Dug Well,11.85
+Kerala,Thrissur,Chalakudy,Konnakuzhi-Ii,Konnakuzhi-ii,10.2916667,76.425,Dug Well,4.03
+Kerala,Thrissur,Mathilakam,Perinjanam,Perinjanam2,10.3146,76.1476,Dug Well,1.19
+Kerala,Thrissur,Wadakkanchery,Varavur,Varavur,10.7266,76.2158,Dug Well,6.05
+Kerala,Wayanad,Mananthavady,Vellamunda,Vellamunda,11.7305556,75.9472222,Dug Well,5.97
+Madhya Pradesh,Alirajpur,Kattiwada,Chandpur,Chandpur,22.3569444,74.2425,Dug Well,7.55
+Madhya Pradesh,Balaghat,Balaghat,Balaghat,Balaghat,21.8127778,80.1836111,Dug Well,5.14
+Madhya Pradesh,Betul,Chicholi,Gadha,Gadha,21.9147222,77.7480556,Dug Well,15.30
+Madhya Pradesh,Bhopal,Phanda,Misrod (S),Misrod (S),23.1611111,77.4688889,Bore Well,5.28
+Madhya Pradesh,Chhindwara,Amarwara,Banjari,Banjari,22.2597222,79.1319444,Dug Well,5.53
+Madhya Pradesh,Damoh,Patharia,Pathria,Pathria,23.8947222,79.1958333,Dug Well,3.15
+Madhya Pradesh,Dhar,Dharampuri,Dharampuri,Dharampuri1,22.1525,75.3472222,Dug Well,9.35
+Madhya Pradesh,Guna,Guna,Jaitadongar,Jaitadongar,24.5311111,77.3355556,Dug Well,7.08
+Madhya Pradesh,Hoshangabad,Pipariya,Pachmarhi,Pachmarhi,22.4772222,78.4391667,Dug Well,0.89
+Madhya Pradesh,Jhabua,Petlawad,Petlawad(S),Petlawad(s),23.0036111,74.7988889,Bore Well,3.99
+Madhya Pradesh,Khargone,Bhagwanpura,Ghatti,Ghatti,21.7227778,75.6672222,Dug Well,7.40
+Madhya Pradesh,Mandsaur,Garoth,Shamgarh,Shamgarh Npz,24.19,75.63,Bore Well,3.76
+Madhya Pradesh,Narsimhapur,Narsimhapur,Sundernagar,Sundernagar,22.8383333,79.2344444,Dug Well,10.60
+Madhya Pradesh,Panna,Pawai,Semaria,Semaria Deep,24.2658333,79.9,Bore Well,13.05
+Madhya Pradesh,Rajgarh,Rajgarh,Rajgarh(S),Rajgarh(S),24.0086111,76.7413889,Bore Well,17.07
+Madhya Pradesh,Rewa,Rewa,Reethi,Reethi,24.5219444,81.3897222,Dug Well,10.95
+Madhya Pradesh,Satna,Amarpatan,Kakra,Kakra,24.3527778,81.0388889,Dug Well,3.00
+Madhya Pradesh,Sehore,Sehore,Bilkisganj,Heerapur,23.1430556,77.1730556,Dug Well,7.56
+Madhya Pradesh,Seoni,Seoni,Rahiwara,Rahiwara,22.2202778,79.5355556,Dug Well,4.00
+Madhya Pradesh,Sheopur,Sheopur,Baroda,Baroda New,25.4905556,76.6558333,Dug Well,5.55
+Madhya Pradesh,Sidhi,Majhauli,Parsilli,Parsilli,24.1466667,81.4883333,Dug Well,13.05
+Madhya Pradesh,Tikamgarh,Jatara,Jatara,Jatara,25.0030556,79.0475,Dug Well,4.10
+Madhya Pradesh,Ujjain,Ujjain,Dabla Rehwari,Dabla Rehwari,23.2544444,75.8155556,Dug Well,10.51
+Maharashtra,Ahmednagar,Jamkhed,Jamkhed,Jamkhed-1,18.7072222,75.2972222,Dug Well,6.10
+Maharashtra,Ahmednagar,Shevgaon,Rakshi,Rakshi,19.3555556,75.3166667,Dug Well,7.47
+Maharashtra,Amravati,Amravati,Walgaon,Walgaon,21.0166667,77.7,Dug Well,5.00
+Maharashtra,Amravati,Nandgaon,Nandgaon,Nandgaon,20.6905556,77.8363889,Dug Well,5.34
+Maharashtra,Aurangabad,Sillod,Kaigaon,Kaigaon,20.1666667,75.6333333,Dug Well,3.92
+Maharashtra,Beed,Patoda,Pimpalwandi,Pimpalwandi,18.9333333,75.3583333,Dug Well,2.95
+Maharashtra,Buldana,Chikhli,Bhankheda,Bhankheda,20.3005556,76.2419444,Dug Well,17.90
+Maharashtra,Buldana,Nandura,Nandura,Nandura-1,20.8341667,76.4513889,Dug Well,10.50
+Maharashtra,Chandrapur,Mul,Saoli,Saoli_Pz,20.1,79.75,Bore Well,3.00
+Maharashtra,Dhule,Shirpur,Hadakhed,Hadakhed,21.4238889,74.9813889,Dug Well,7.30
+Maharashtra,Gondia,Arjuni Morgaon,Navegaon,Navegaon,20.9166667,80.0833333,Dug Well,3.85
+Maharashtra,Jalgaon,Bhadgaon,Bhadgaon,Bhadgaon-1,20.6719444,75.2255556,Dug Well,7.70
+Maharashtra,Jalna,Ambad,Ambad,Ambad,19.6,75.7833333,Dug Well,2.01
+Maharashtra,Kolhapur,Chandgad,Karve,Karve,15.8972222,74.3402778,Dug Well,5.30
+Maharashtra,Latur,Latur,Latur Ring Road,Latur Ring Road,18.3988889,76.5438889,Dug Well,3.10
+Maharashtra,Nagpur,Hingana,Mohgaon Zelpi,Mohgaon Zelpi,21.0683333,78.8875,Dug Well,4.70
+Maharashtra,Nagpur,Narkhed,Bhavangaon,Bhavangaon,21.4227778,78.6688889,Dug Well,12.40
+Maharashtra,Nanded,Hadgaon,Dorli,Dorli,19.4238889,77.6344444,Dug Well,3.70
+Maharashtra,Nandurbar,Shahada,Wadali,Wadali-1,21.4555556,74.6177778,Dug Well,13.50
+Maharashtra,Nashik,Sinnar,Malwadi,Malwadi-1,19.7733333,74.0847222,Dug Well,6.70
+Maharashtra,Osmanabad,Umarga,Umerga,Umerga,17.8413889,76.6233333,Dug Well,2.90
+Maharashtra,Pune,Baramati,Undavri Kade Pathar,Undavri Kade Pathar,18.2472222,74.5388889,Dug Well,3.40
+Maharashtra,Raigad,Mangaon,Kumbharcha Kosta Bk,Kumbharcha Kosta,18.3027778,73.3055556,Dug Well,2.90
+Maharashtra,Ratnagiri,Mandangad,Kumble,Kumble,17.9458333,73.2944444,Dug Well,3.00
+Maharashtra,Satara,Khandala,Shirwal,Shirwal,18.15,73.975,Dug Well,4.10
+Maharashtra,Sindudurg,Devgad,Tale Bazar,Tale Bazar,16.3833333,73.5022222,Dug Well,13.70
+Maharashtra,Solapur,Barshi,Dhanore,Dhanore,18.3166667,75.7833333,Dug Well,4.10
+Maharashtra,Solapur,Solapur North,Solapur,IMD Solapur_Pz,17.6702778,75.9227778,Bore Well,5.90
+Maharashtra,Thane,Vada,Gothanpada,Gothanpada,19.6666667,73.0833333,Dug Well,3.00
+Maharashtra,Wardha,Samudrapur,Girad,Girad,20.6583333,79.1166667,Dug Well,3.86
+Maharashtra,Washim,Mangrulpir,Lathi,Lathi,20.3655556,77.2419444,Dug Well,9.50
+Maharashtra,Yavatmal,Ghatanji,Mowada,Mowada,20.1461111,78.4094444,Dug Well,5.92
+Maharashtra,Yavatmal,Yavatmal,Yavatmal,Yavatmal,20.3911111,78.1277778,Dug Well,2.58
+Meghalaya,West Garo Hills,Selsella,Salsella,Salsella,25.6947222,90.0138889,Dug Well,3.09
+Odisha,Anugul,Kaniha,Sana Santrabandha,Sana Santrabandha,21.0902778,84.9525,Dug Well,4.99
+Odisha,Balangir,Loisinga,Burda,Burda,20.8747222,83.5141667,Dug Well,2.35
+Odisha,Baleshwar,Similia,Teliapada,Teliapada,21.1352778,86.5861111,Dug Well,2.00
+Odisha,Bargarh,Bijepur,Burdapali,Burdapali,21.1594444,83.4691667,Dug Well,3.41
+Odisha,Baudh,Harbhanga,Sarta-Guda,Sarta-Guda,20.5986111,84.5763889,Dug Well,3.77
+Odisha,Cuttack,Kantapada,Brahmanajharilo,Brahmanajharilo,20.2833333,85.95,Dug Well,2.96
+Odisha,Dhenkanal,Kamakshaya Nagar,Kamakyanagar-Ii,Kamakyanagar,20.9313889,85.5491667,Dug Well,6.01
+Odisha,Gajapati,Parlakhemundi,Narayanpur,Narayanpur,18.8736111,84.1919444,Dug Well,4.78
+Odisha,Ganjam,Ganjam,Poirasi,Poirasi 1,19.4902778,84.9916667,Dug Well,3.71
+Odisha,Jagatsinghapur,Jagatsinghapur,Gobindpur,Govindpur,20.3311111,86.055,Dug Well,0.81
+Odisha,Jharsuguda,Jharsuguda,Belpahar,Belpahar,21.8255556,83.8486111,Dug Well,5.95
+Odisha,Kandhamal,G.Udayagiri,G.Udaigiri,G.udaigiri 1,20.1258333,84.3686111,Dug Well,3.90
+Odisha,Kendrapara,Rajnagar,Rajnagar,Rajnagar,20.5730556,86.7147222,Dug Well,2.18
+Odisha,Kendujhar,Patana,Kendeiposhi,Kendeiposhi 1,21.6819444,85.7927778,Dug Well,2.15
+Odisha,Khordha,Bhubaneswar,Bhubaneswar Urban,B-41 Pokhariput,20.24,85.8097222,Dug Well,7.35
+Odisha,Koraput,Dasamantapur,Dasmanthapur,Dasmanthapur,19.0508333,82.9277778,Dug Well,3.55
+Odisha,Malkangiri,Korkunda,Korukonda,Korukonda 1,18.2886111,81.985,Dug Well,3.36
+Odisha,Mayurbhanj,Jamda,Jamda,Jamda 1,22.2758333,86.0705556,Dug Well,4.85
+Odisha,Mayurbhanj,Sulia Pada,Charchakia,Charchakia,22.0361111,86.8997222,Dug Well,10.90
+Odisha,Nayagarh,Dasapalla,Durga Prasad,Durga Prasad,20.4055556,84.6661111,Dug Well,4.40
+Odisha,Nuapada,Nuapada,Godphula,Godphula,20.8202778,82.5658333,Dug Well,4.88
+Odisha,Puri,Sadar,Puri Urban,P-12 ITI Chhak,19.8055556,85.8508333,Dug Well,3.45
+Odisha,Rayagada,Ramanguda,Gumda,Gumda,19.22,83.7716667,Dug Well,4.77
+Odisha,Sambalpur,Maneswar,Chiplima,Chiplima,21.3438889,83.8863889,Dug Well,0.34
+Odisha,Sonapur,Biramaharajpur,Jatesingha,Jatesingha,20.8708333,84.1180556,Dug Well,4.30
+Odisha,Sundargarh,Kuanrmunda,Kumajharia,Kumajharia,22.355,84.7458333,Dug Well,2.50
+Punjab,Barnala,Barnala,Barnala,Barnala (s),30.3625,75.525,Tube Well,45.26
+Punjab,Fazilka,Abohar,Abohar,Abohar,30.1477778,74.1916667,Dug Well,2.80
+Punjab,Hoshiarpur,Hoshiarpur - I,Sham Chaurasi,Sham Chaurasi,31.5013889,75.7486111,Dug Well,12.45
+Punjab,Ludhiana,Samrala,Punjeta,Punjeta,30.8727778,76.0875,Dug Well,10.25
+Punjab,Taran Taran,Gandiwind,Gandi Wind,Gandi Wind-Pz,31.5166667,74.7,Tube Well,15.71
+Rajasthan,Alwar,Neemrana,Kanhawas,Kanhawas,28.063,76.363,Tube Well,76.21
+Rajasthan,Baran,Atru,Kanwai,Kanwai,24.748,76.742,Dug Well,5.19
+Rajasthan,Barmer,Sindhari,Sindari,Sindari,25.567,71.9,Tube Well,15.90
+Rajasthan,Bhilwara,Jahazpur,Luhari Kallan,Luhari Kallan,25.653,75.383,Tube Well,5.00
+Rajasthan,Bikaner,Kolayat,Bajju,Bajju,27.933,72.508,Dug Well,28.14
+Rajasthan,Chittaurgarh,Chittaurgarh,Purohitokasavat,Purohitokasavat,24.942,74.519,Dug Well,13.48
+Rajasthan,Dhaulpur,Dhaulpur,Aathmeel,Aathmeel,26.648,77.802,Dug Well,8.17
+Rajasthan,Ganganagar,Sadulshahar,Sunderpura,Sunderpura_Dw,29.799,74.089,Dug Well,24.15
+Rajasthan,Jaipur,Bassi,Madhogarh,Madhogarh,26.753,76.166,Tube Well,36.58
+Rajasthan,Jaipur,Phagi,Chakwara Piezometer,Chakwara,26.608,75.507,Tube Well,2.80
+Rajasthan,Jaisalmer,Jaisalmer,Bhadrias,Bhadrias,27.483,71.783,Dug Well,6.52
+Rajasthan,Jaisalmer,Sankra,Phalsund,Phalsund,26.408,71.928,Dug Well,4.99
+Rajasthan,Jhunjhunun,Jhunjhunu,Math,Math,28.175,75.454,Tube Well,53.72
+Rajasthan,Jodhpur,Mandor,Salodi,Salodi,26.413,72.849,Tube Well,22.35
+Rajasthan,Kota,Ladpura,Mandana,Mandana,24.933,75.933,Dug Well,3.42
+Rajasthan,Pratapgarh,Dhariawad,Khunta,Khunta,24.033,74.458,Dug Well,5.70
+Rajasthan,Sawai Madhopur,Khandar,Bodal,Bodal,25.933,76.433,Dug Well,3.49
+Rajasthan,Tonk,Deoli,Bantholi,Bantholi,25.883,75.567,Dug Well,8.90
+Rajasthan,Udaipur,Sarada,Dingri,Dingri,24.217,73.867,Dug Well,0.88
+Tamil Nadu,Chennai,Chennai,Mylapore (Part 2),Alwarpet,13.025,80.2583,Dug Well,3.15
+Tamil Nadu,Cuddalore,Cuddalore,Thiyagavalli,Nadutitu Dw,11.6392,79.7472,Dug Well,4.09
+Tamil Nadu,Dharmapuri,Nallampalli,Toppur Kanigarahalli,Thoppur Pz,11.9403,78.0594,Bore Well,4.53
+Tamil Nadu,Erode,Perundurai,Karumandisellipalayam,Perundurai1,11.2792,77.5847,Dug Well,13.25
+Tamil Nadu,Kancheepuram,Kancheepuram,Vishnu Kanchi - A,Kancheepuram,12.8333,79.7083,Dug Well,6.50
+Tamil Nadu,Krishnagiri,Krishnagiri,Guruvinayanapalli,Guruvinayanpalli,12.65,78.3292,Dug Well,4.50
+Tamil Nadu,Namakkal,Namagiripettai,Thimmanaickanpatty,T.Naickanpatti,11.5875,78.4403,Dug Well,7.40
+Tamil Nadu,Pudukkottai,Avudaiyarkoil,Seiyanam,Mimisal1,9.93333,79.1417,Dug Well,3.10
+Tamil Nadu,Ranipet,Wallajah,Visharam,Arakkonam,12.9058,79.2819,Dug Well,4.10
+Tamil Nadu,Sivagangai,R.S.Mangalam,Thiruvegampathu,Thiruvegamputhur,9.83333,78.7833,Dug Well,3.30
+Tamil Nadu,Theni,Bodinayakanur,Veerapandi,Veerapandi,9.9625,77.45,Dug Well,5.92
+Tamil Nadu,Tiruchirappalli,Andanallur,Trichy,Puttur-Thennur,10.8147,78.6794,Dug Well,5.32
+Tamil Nadu,Tirunelveli,Manur,Senthimangalam(Karai,Tachchnallur,8.74583,77.7,Dug Well,2.68
+Tamil Nadu,Tiruppur,Madathukulam,Thungavi 1-2,Karattoluvu,10.6236,77.375,Bore Well,1.70
+Tamil Nadu,Tiruvallur,Minjur,Ponneri 1(Ponneri 2),Ponneri Dw,13.3419,80.1892,Dug Well,4.55
+Tamil Nadu,Vellore,Gudiyatham,Sethuvandai,Sennarayanapalle,12.9578,78.9103,Dug Well,3.95
+Telangana,Adilabad,Gudihatnoor,Gudihathur,Gudihathur,19.5303903,78.5134459,Dug Well,3.81
+Telangana,Hyderabad,Maredpally,Picket,Picket-2-Pz,17.4518616,78.4957544,Bore Well,0.01
+Telangana,Jangaon,Raghunathpalle,Kannaipalle,Kannaipalle,17.7101,79.3065,Bore Well,2.97
+Telangana,Khammam,Kalluru,Bathulapally,Bathulapally,17.23352,80.593342,Bore Well,8.99
+Telangana,Mahabubnagar,Devarkadara,Bandrapal,Bandrapal,16.605,77.7983,Dug Well,1.87
+Telangana,Mulugu,Mulug,Jangalapalli,Jangalapalli,18.2085461,79.9875501,Dug Well,1.90
+Telangana,Nalgonda,Kethepally,Chikatguda,Chikatguda,17.1636,79.52134,Dug Well,1.69
+Telangana,Nirmal,Sarangapur,Chincholi,Chincholi (Bk),19.143379,78.3388945,Dug Well,2.31
+Telangana,Ranga Reddy,Ibrahimpatnam,Polkampalli,Polkampalli,17.226068,78.7068681,Dug Well,5.40
+Telangana,Sangareddy,Zahirabad,Didigi,Didigi,17.7261,77.5997,Bore Well,0.98
+Telangana,Vikarabad,Bommaraspet,Enkapalli,Enkapalli,17.1519,77.6347,Dug Well,6.75
+Telangana,Warangal,Nekkonda,Nekkonda,Nekkonda,17.7918941,79.7830481,Dug Well,0.31
+Tripura,Khowai,Khowai,Khowai,Khowai,24.0638889,91.605,Dug Well,2.08
+Tripura,South Tripura,Silachhari,Ananda Bandhu Para,Ananda Bandhu Para,23.21398,91.77908,Dug Well,4.49
+Uttar Pradesh,Allahabad,Karchana,Karchhana,Karchhana,25.283,81.938,Dug Well,10.99
+Uttar Pradesh,Ayodhya,Maya Bazar,Gosaiganj,Gosaiganj Pz-Gwd,26.583,82.385,Tube Well,3.94
+Uttar Pradesh,Ballia,Hanumanganj,Narhi,Narhi,25.711,84.023,Dug Well,7.08
+Uttar Pradesh,Barabanki,Dewa,Takaji,Takaji,27.0347,81.12583,Dug Well,4.01
+Uttar Pradesh,Bijnor,Najibabad,Chandok,Chandok,29.592,78.167,Dug Well,18.68
+Uttar Pradesh,Deoria,Deoria Sadar,Usra Bazaar,Usra Bazaar,26.46,83.71,Dug Well,4.38
+Uttar Pradesh,Fatehpur,Vijayipur,Sadhuwapur,Sadhuwapur,25.7,81.06,Dug Well,1.87
+Uttar Pradesh,Gonda,Paraspur,Bhauriganj,Bhauriganj,27.013,81.736,Dug Well,3.18
+Uttar Pradesh,Hathras,Iglas,Iglas,Iglas,27.717,77.933,Dug Well,10.51
+Uttar Pradesh,Jaunpur,Mariahu,Ganeshganj,Ganeshganjbazar,25.67,82.64,Dug Well,15.01
+Uttar Pradesh,Kanpur Dehat,Maitha,Sahtawanpurwa,Sahtawanpurwa,26.6,79.98,Dug Well,2.05
+Uttar Pradesh,Kushinagar,Khadda,Bindaulia,Bindaulia,27.0974,83.8038,Dug Well,3.83
+Uttar Pradesh,Lucknow,Malihabad,Malihabad,Malihabad,26.928,80.717,Tube Well,13.85
+Uttar Pradesh,Maunath Bhanjan,Pardaha,Bhiti,Bhiti,25.95,83.58,Dug Well,6.32
+Uttar Pradesh,Pratapgarh,Aspur Deosara,Udai Shahpur,Udai Shahpur,25.942,82.325,Dug Well,4.38
+Uttar Pradesh,Rae Bareli,Rahi,Parmanpur,Parmanpur,26.10671,81.31807,Dug Well,2.78
+Uttar Pradesh,Shrawasti,Sirsiya,Sirsia,Sirsia Pz(Gwd),27.799,82.09,Tube Well,3.50
+Uttar Pradesh,Sonbhadra,Robertsganj,Robertsganj,Robertsganj1,24.692,83.067,Dug Well,5.11
+Uttar Pradesh,Sultanpur,P.P. Kannaicha,Kotra Khurd,Kotra Khurd,26.094,82.287,Dug Well,5.54
+Uttarakhand,Dehradun,Sahaspur,Selakui,Selakui,30.35361,77.86333,Tube Well,13.11
+Uttarakhand,Udham Singh Nagar,Rudrapur,Rudrapur,Rudrapur,28.99694,79.40222,Tube Well,2.13
+West Bengal,Bankura,Bishnupur,Basudevpurcamp(No.1,Basudevpurcamp(No.,23.0208,87.3347,Dug Well,4.27
+West Bengal,Bankura,Onda,Punisole,Punisole,23.1448,87.0713,Dug Well,4.52
+West Bengal,Birbhum,Dubrajpur,Batikar,Batikar,23.7627773,87.5222244,Dug Well,7.69
+West Bengal,Birbhum,Rampurhat,Piarsala,Piarsala,24.19887,87.70068,Dug Well,4.20
+West Bengal,Darjeeling,Kharibari,Sonachandi,Sonachandi,26.56946,88.23416,Dug Well,2.53
+West Bengal,Howrah,Uluberia,Jagadispur,Jagadispur,22.454,88.108,Dug Well,0.32
+West Bengal,Jalpaiguri,Matiali,Chalsa,Chalsa,26.8806,88.80347,Dug Well,1.41
+West Bengal,Jhargram,Jamboni,Tulibarh,Tulibarh,22.38299,86.899,Dug Well,7.82
+West Bengal,Malda,Bamongola,Paikpara,Paikpara,25.1636,88.3761,Dug Well,4.22
+West Bengal,N 24 Parganas,Rajarhat,Rajarhat,Rajarhat,22.63672,88.47848,Dug Well,0.96
+West Bengal,Paschim Barddhaman,Kanksa,Kanksa,Kanksa,23.48997,87.45765,Dug Well,3.57
+West Bengal,Purulia,Barabazar,Bamundiha,Bamundiha,23.11644,86.36552,Dug Well,5.80
+West Bengal,Purulia,Nituria,Nituria,Nituria,23.66203,86.82467,Dug Well,3.24
+West Bengal,Uttar Dinajpur,Kaliaganj,Dalimgaon,Dalimgaon,25.6421,88.3861,Dug Well,2.75
