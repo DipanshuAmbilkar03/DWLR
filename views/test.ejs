@@ -15,10 +15,10 @@
 <body>
 
     <!-- Top Navigation -->
-    <header class="navbar">
-        <h1 class="navbar-title">DWLR Water Levels</h1>
-        <p class="navbar-date">Last Updated: <%= new Date().toLocaleDateString() %></p>
-    </header>
+        <header class="navbar">
+            <h1 class="navbar-title">DWLR Water Levels</h1>
+            <p class="navbar-date">Last Updated: <%= new Date().toLocaleDateString() %></p>
+        </header>
 
     <!-- Main Layout -->
     <div class="main-container">
@@ -26,21 +26,29 @@
         <!-- Left Sidebar -->
         <aside class="sidebar">
             <h2 class="sidebar-title">Alerts</h2>
-            <% anomalies.forEach(dam => { %>
-            <div class="alert-item <%= dam.alert === 'RED' ? 'alert-red' : 'alert-blue' %>">
-                <h3 class="alert-name"><%= dam.name %></h3>
-                <p class="alert-level">Current Level: <%= dam.currentLevel %>%</p>
-                <p class="alert-message"><%= dam.message %></p>
-            </div>
-            <% }); %>
-            <% if (anomalies.length === 0) { %>
-            <p class="no-alerts">No anomalies detected.</p>
+            
+            <% if (anomalies && anomalies.length > 0) { %>
+                <% anomalies.forEach(dam => { %>
+                    <div class="alert-item <%= dam.alert === 'RED' ? 'alert-red' : 'alert-blue' %>">
+                        <h3 class="alert-name" style="margin: 0; font-size: 18px; color: #100f0f;"><%= dam.state %></h3>
+                        <p class="alert-info" style="margin: 5px 0;"><strong>Tehsil:</strong> <%= dam.tehsil %></p>
+                        <p class="alert-info" style="margin: 5px 0;"><strong>District:</strong> <%= dam.district %></p>
+                        <p class="alert-info" style="margin: 5px 0;"><strong>Current Level:</strong> <%= dam.waterLevel%> m</p>
+                        <p class="alert-info" style="margin: 5px 0;"><strong>Decrease in level :</strong> <%= 5 /dam.waterLevel%>%</p>
+                        <p class="alert-info" style="margin: 5px 0;"><strong>Well Type:</strong> <%= dam.wellType %></p>
+                        <p class="alert-message" style="margin-top: 10px; font-size: 16px; color: #440f0f;"><%= dam.message %></p>
+                    </div>
+                <% }); %>
+            <% } else { %>
+                <p class="no-alerts">No anomalies detected.</p>
             <% } %>
-
+        
             <div class="side-bar-bottom">
-                stats
+                <h3>Stats</h3>
+                <p>More data coming soon...</p>
             </div>
         </aside>
+        
 
         <!-- Map Section -->
         <main class="map-container">
