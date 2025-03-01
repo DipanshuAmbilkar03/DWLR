@@ -15,37 +15,65 @@
 <body>
 
     <!-- Top Navigation -->
-        <header class="navbar">
-            <h1 class="navbar-title">DWLR Water Levels</h1>
-            <p class="navbar-date">Last Updated: <%= new Date().toLocaleDateString() %></p>
-        </header>
 
     <!-- Main Layout -->
     <div class="main-container">
 
         <!-- Left Sidebar -->
         <aside class="sidebar">
-            <h2 class="sidebar-title">Alerts</h2>
+            <div class="nav-bar">
+                <h1 class="navbar-title">DWLR Water Levels</h1>
+                <p class="navbar-date">Last Updated: <%= new Date().toLocaleDateString() %></p>
+            </div>
+
+            <div>
+                <br>    
+                <h2 class="sidebar-title" style="color:black">Alerts</h2>
+                
+                <div class="alerts-container mb-3">
+                    <% if (anomalies && anomalies.length > 0) { %>
+                        <% anomalies.forEach(dam => { %>
+                            <% 
+                                let alertClass = "green"; // Default is green (normal)
+                                if (dam.waterLevel < 3) {
+                                    alertClass = "red"; // Critical level
+                                } else if (dam.waterLevel < 5) {
+                                    alertClass = "orange"; // Warning level
+                                }
+                            %>
+                            <div class="alert-card <%= alertClass %>">
+                                    <div class="alert-header">
+                                        <h3 class="dam-name"><%= dam.state %></h3>
+                                        <br>
+                                        <% if (dam.waterLevel < 3) { %>
+                                            <span class="alert-label-red">Critical</span>
+                                        <% } else if (dam.waterLevel < 5) { %>
+                                            <span class="alert-label-orange">Low</span>
+                                        <% } else { %>
+                                            <span class="alert-label-green">Normal</span>
+                                        <% } %>
+                                    </div>                                
+                                <div class="alert-content">
+                                    <p class="water-level"><%= dam.waterLevel %>m</p>
+                                    <div class="storage-info">
+                                        <span class="storage-percent">
+                                            <%= ((dam.waterLevel / (dam.maxLevel || 20)) * 100).toFixed(2) %>%
+                                        </span>
+                                        <span class="storage-label">Storage %</span>
+                                    </div>
+                                </div>
+                            </div>
+                        <% }); %>
+                    <% } else { %>
+                        <p class="no-alerts">No anomalies detected.</p>
+                    <% } %>                    
+                </div>
+                
             
-            <% if (anomalies && anomalies.length > 0) { %>
-                <% anomalies.forEach(dam => { %>
-                    <div class="alert-item <%= dam.alert === 'RED' ? 'alert-red' : 'alert-blue' %>">
-                        <h3 class="alert-name" style="margin: 0; font-size: 18px; color: #100f0f;"><%= dam.state %></h3>
-                        <p class="alert-info" style="margin: 5px 0;"><strong>Tehsil:</strong> <%= dam.tehsil %></p>
-                        <p class="alert-info" style="margin: 5px 0;"><strong>District:</strong> <%= dam.district %></p>
-                        <p class="alert-info" style="margin: 5px 0;"><strong>Current Level:</strong> <%= dam.waterLevel%> m</p>
-                        <p class="alert-info" style="margin: 5px 0;"><strong>Decrease in level :</strong> <%= 5 /dam.waterLevel%>%</p>
-                        <p class="alert-info" style="margin: 5px 0;"><strong>Well Type:</strong> <%= dam.wellType %></p>
-                        <p class="alert-message" style="margin-top: 10px; font-size: 16px; color: #440f0f;"><%= dam.message %></p>
-                    </div>
-                <% }); %>
-            <% } else { %>
-                <p class="no-alerts">No anomalies detected.</p>
-            <% } %>
-        
-            <div class="side-bar-bottom">
-                <h3>Stats</h3>
-                <p>More data coming soon...</p>
+                <div class="side-bar-bottom">
+                    <h3>Stats</h3>
+                    <p>More data coming soon...</p>
+                </div>
             </div>
         </aside>
         
