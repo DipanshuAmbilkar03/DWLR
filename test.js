@@ -22,7 +22,7 @@ function detectAnomalies(data) {
     const anomalies = [];
     data.forEach(row => {
         if (row.WATER !== undefined && row.LATITUDE !== undefined && row.LONGITUDE !== undefined) {
-            if (parseFloat(row.WATER) < 5) {
+            if (parseFloat(row.WATER) < 10) {
                 anomalies.push({
                     state: row.STATE,
                     district: row.DISTRICT,
@@ -38,6 +38,7 @@ function detectAnomalies(data) {
             }
         }
     });
+
     return anomalies;
 }
 
@@ -81,6 +82,8 @@ app.get('/alerts', (req, res) => {
         MAP_API_KEY: process.env.MAP_API_KEY,
     });
 });
+
+
 
 // Start server
 const PORT = 3000;
