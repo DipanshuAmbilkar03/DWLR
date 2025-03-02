@@ -34,6 +34,7 @@ function detectAnomalies(data) {
                     wellType: row.WellType,
                     waterLevel: parseFloat(row.WATER),
                     message: 'Water level is below the threshold!',
+                    id: row.ID,
                 });
             }
         }
@@ -81,6 +82,53 @@ app.get('/alerts', (req, res) => {
         coordinates,  
         MAP_API_KEY: process.env.MAP_API_KEY,
     });
+});
+
+app.post("/graph", (req, res) => {
+    const anomalies = detectAnomalies(currentDataset);
+    let { state } = req.params;
+    console.log(state);
+    res.render("E:\\PBL@2\\views\\stats.ejs");
+});
+
+    // app.get("/search", (req, res) => {
+    //     console.log("graph");
+    //     res.render("E:\\PBL@2\\views\\searchResults.ejs");
+    // });
+
+// app.get("/search", (req, res) => {
+//     res.render("searchResults", { 
+//         labels: case3Data.map(row => row.Site),  
+//         waterLevels: case3Data.map(row => row.WATER) 
+//     });
+// });
+    
+app.post("/graph", (req, res) => {
+    const { id, state, waterLevel, maxLevel } = req.body;
+
+    // Find the selected dataset (Modify logic based on actual data structure)
+    const selectedData = {
+        labels: [state],  
+        waterLevels: [parseFloat(waterLevel)],
+        maxLevels: [parseFloat(maxLevel)]
+    };
+
+    // Redirect to graph display page
+    res.json({ success: true, redirect: `/graph/${id}` });
+});
+
+// Graph page route
+app.get("/graph/:id", (req, res) => {
+    const id = req.params.id;
+    
+    // Retrieve data (modify as needed)
+    const graphData = { 
+        labels: ["Water Level"],  
+        waterLevels: [7], // Dummy value, replace with actual
+        maxLevels: [20] 
+    };
+
+    res.render("graphPage", { graphData });
 });
 
 
