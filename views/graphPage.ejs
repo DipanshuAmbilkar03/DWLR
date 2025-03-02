@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Level Graph</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h1>Water Level Graph</h1>
+    <canvas id="waterLevelChart"></canvas>
+
+    <script>
+        const ctx = document.getElementById('waterLevelChart').getContext('2d');
+
+        const labels = JSON.parse('<%- JSON.stringify(graphData.labels) %>');
+        const waterLevels = JSON.parse('<%- JSON.stringify(graphData.waterLevels) %>');
+        const maxLevels = JSON.parse('<%- JSON.stringify(graphData.maxLevels) %>');
+
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Water Level (m)',
+                    data: waterLevels,
+                    backgroundColor: 'rgba(255, 99, 132, 0.5)',
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    borderWidth: 1
+                }, {
+                    label: 'Max Level (m)',
+                    data: maxLevels,
+                    backgroundColor: 'rgba(54, 162, 235, 0.5)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: { beginAtZero: true }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
