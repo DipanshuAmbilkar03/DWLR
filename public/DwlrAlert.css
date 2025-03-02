@@ -14,16 +14,23 @@ h1, h2, h3 {
 
 /* Navbar Styles */
 .nav-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content :center;
+    gap : 70%;
     align-items: center;
-    background-color: rgb(40, 40, 40);
-    padding: 5px 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-    border-radius: 2px;
+    background-color: rgb(40, 40, 40); 
+    padding: 10px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); 
+    border-radius: 0; 
+    z-index: 1000; 
 }
 
 .navbar-title {
+    margin-left: -10px;
     font-size: 24px;
     color: #FFFFFF;
 }
@@ -31,6 +38,55 @@ h1, h2, h3 {
 .navbar-date {
     color: #ECF0F1;
     font-size: 12px;
+}
+
+/* Search Form Styles */
+.search-form {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #ffffff;
+    padding: 2px 4px 2px 2px;
+    border-radius: 25px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    overflow: hidden;
+}
+
+/* Search Input */
+.search-form input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 10px 15px;
+    font-size: 1rem;
+    border-radius: 25px;
+}
+
+/* Search Button */
+.search-form button {
+    background-color: #368dea; 
+    border: none;
+    padding: 10px 15px;
+    font-size: 1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.search-btn{
+    margin-right: 10px;
+}
+.search-form button:hover {
+    background-color: #0056b3; 
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .search-form {
+        width: 100%;
+        max-width: 350px;
+    }
 }
 
 /* Layout */
@@ -89,6 +145,9 @@ h1, h2, h3 {
     font-weight: bold;
     border-radius: 5px 5px 0 0;
     text-align: center;
+}
+.alert-form {
+    width: 100%;
 }
 
 /* Alert Card - Color Variations */
