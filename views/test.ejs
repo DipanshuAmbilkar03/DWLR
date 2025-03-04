@@ -1,20 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>DWLR - Water Level Alert System</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DWLR - Water Level Alert System</title>
+    
+    <!-- Styles -->
     <link rel="stylesheet" href="./DwlrAlert.css">
-    <script src="https://cdn.maptiler.com/maptiler-sdk-js/v3.0.1/maptiler-sdk.umd.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@5.2.0/dist/maplibre-gl.css" />
     <link href="https://cdn.maptiler.com/maptiler-sdk-js/v3.0.1/maptiler-sdk.css" rel="stylesheet" />
+    
+    <!-- Scripts -->
+    <script src="https://unpkg.com/maplibre-gl@5.2.0/dist/maplibre-gl.js"></script>
+    <script src="https://cdn.maptiler.com/maptiler-sdk-js/v3.0.1/maptiler-sdk.umd.min.js"></script>
+    <script src="https://unpkg.com/deck.gl@8.9.33/dist.min.js"></script>
+
     <style>
         body { margin: 0; padding: 0; }
-        #map { position: absolute; top: 0; bottom: 0; width: 100%; }
+        #map { top: 0; bottom: 0; width: 100%; }
+        .maplibregl-popup { z-index: 2; }
     </style>
 </head>
+
 <body>
 
-    <!-- Top Navigation -->
+    <!-- Navigation -->
     <header>
         <div class="nav-bar">
             <h1 class="navbar-title">DWLR Water Levels</h1>
@@ -22,9 +32,8 @@
         </div>
     </header>
 
-    <!-- Main Layout -->
+    <!-- Main Content -->
     <div class="main-container">
-        <!-- Left Sidebar -->
         <aside class="sidebar">
             <h2 class="sidebar-title" style="color:black; margin-top: 40px;">Alerts</h2>
 
@@ -34,35 +43,18 @@
                     <button class="search-btn" type="submit">Search</button>
                 </form>                                      
             </div>
-            
-            <div class="alerts-container mb-3">
+
+            <div class="alerts-container">
                 <% if (anomalies && anomalies.length > 0) { %>
                     <% anomalies.forEach(dam => { %>
-                        <% 
-                            let alertClass = "green"; 
-                            if (dam.waterLevel < 3) {
-                                alertClass = "red"; 
-                            } else if (dam.waterLevel < 5) {
-                                alertClass = "orange"; 
-                            }
-                        %>
-                        <button type="button" class="alert-card <%= alertClass %>" 
-                            onclick="console.log('ID:', '<%= dam.id_ %>', 'State:', '<%= dam.state %>', 'Water Level:', '<%= dam.waterLevel %>', 'Max Level:', '<%= dam.maxLevel || 20 %>');
-                                loadGraph('<%= dam.id %>', '<%= dam.state %>', '<%= dam.waterLevel %>', '<%= dam.maxLevel || 20 %>');
-                            ">
-                        
+                        <% let alertClass = dam.waterLevel < 3 ? "red" : (dam.waterLevel < 5 ? "orange" : "green"); %>
+                        <button type="button" class="alert-card <%= alertClass %>" onclick="loadGraph('<%= dam.id %>', '<%= dam.state %>', '<%= dam.waterLevel %>', '<%= dam.maxLevel || 20 %>');">
                             <div class="alert-header">
                                 <h3 class="dam-name"><%= dam.state %></h3>
-                                <br>
-                                <% if (dam.waterLevel < 3) { %>
-                                    <span class="alert-label-red">Critical</span>
-                                <% } else if (dam.waterLevel < 5) { %>
-                                    <span class="alert-label-orange">Low</span>
-                                <% } else { %>
-                                    <span class="alert-label-green">Normal</span>
-                                <% } %>
+                                <span class="alert-label-<%= alertClass %>">
+                                    <%= dam.waterLevel < 3 ? "Critical" : (dam.waterLevel < 5 ? "Low" : "Normal") %>
+                                </span>
                             </div>                                
-
                             <div class="alert-content">
                                 <p class="District"><%= dam.district %></p>
                                 <p class="water-level"><%= dam.waterLevel %>m</p>
@@ -92,52 +84,46 @@
         <p>Ajeenkya D.Y.Patil School Of Engineering</p>
     </footer>
 
-    <!-- Secure Map Script -->
+    <!-- Map & Deck.gl Integration -->
     <script>
         fetch('/map-key')
             .then(response => response.json())
             .then(data => {
-                maptilersdk.config.apiKey = data.apiKey;
-
+                if (!data.apiKey) {
+                    console.error("API Key is missing");
+                    alert("Failed to load map. API key missing.");
+                    return;
+                }
+    
                 const coordinates = JSON.parse('<%- JSON.stringify(coordinates || []) %>');
-
-                const map = new maptilersdk.Map({
+    
+                const map = new maplibregl.Map({
                     container: 'map',
-                    style: maptilersdk.MapStyle.STREETS,
+                    style: `https://api.maptiler.com/maps/streets/style.json?key=${data.apiKey}`,
                     center: coordinates.length > 0 ? [coordinates[0].lng, coordinates[0].lat] : [78.9629, 20.5937],
-                    zoom: 5
+                    zoom: 5,
+                    scrollZoom: true
                 });
-
+    
+                map.scrollZoom.enable();
+                map.addControl(new maplibregl.NavigationControl(), 'top-right');
+    
                 coordinates.forEach(coord => {
                     if (coord.lng && coord.lat) {
-                        new maptilersdk.Marker()
+                        new maplibregl.Marker()
                             .setLngLat([coord.lng, coord.lat])
                             .addTo(map);
                     }
                 });
+    
             })
-            .catch(error => console.error("Error loading map:", error));
+            .catch(error => {
+                console.error("Error fetching API key:", error);
+                alert("Error loading map. Please try again.");
+            });
     </script>
-
-    <!-- Load Graph Function -->
-    <script>
-        function loadGraph(id, state, waterLevel, maxLevel) {
-            fetch('/graph', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ id, state, waterLevel, maxLevel })
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    window.location.href = `/graph/${id}`;
-                } else {
-                    alert('Failed to load graph.');
-                }
-            })
-            .catch(error => console.error('Error:', error));
-        }
-    </script>
+    
+    
 
 </body>
 </html>
