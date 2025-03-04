@@ -3,42 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Water Level Graph</title>
+    <title>Search Results - Water Level</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-    <h1>Water Level Graph</h1>
-    <div>
-        <canvas id="waterLevelChart"></canvas>
-    </div>
+    <h1>Search Water Levels</h1>
+    
+    <!-- Search Form -->
+    <form action="/search" method="GET">
+        <input type="text" name="q" placeholder="Search by location..." value="<%= query || '' %>" required>
+        <button type="submit">Search</button>
+    </form>
 
-    <script>
-        const ctx = document.getElementById('waterLevelChart').getContext('2d');
+    <!-- Display Results -->
+    <% if (labels.length === 0) { %>
+        <p>No results found.</p>
+    <% } else { %>
+        <div>
+            <canvas id="waterLevelChart"></canvas>
+        </div>
 
-        const labels = JSON.parse('<%- JSON.stringify(labels) %>');
-        const waterLevels = JSON.parse('<%- JSON.stringify(waterLevels) %>');
+        <script>
+            const ctx = document.getElementById('waterLevelChart').getContext('2d');
+            const labels = JSON.parse('<%- JSON.stringify(labels) %>');
+            const waterLevels = JSON.parse('<%- JSON.stringify(waterLevels) %>');
 
-        new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: labels,
-                datasets: [{
-                    label: 'Water Level (m)',
-                    data: waterLevels,
-                    backgroundColor: 'rgba(54, 162, 235, 0.5)', 
-                    borderColor: 'rgba(54, 162, 235, 1)',
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                responsive: true,
-                scales: {
-                    y: {
-                        beginAtZero: true
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Water Level (m)',
+                        data: waterLevels,
+                        backgroundColor: 'rgba(54, 162, 235, 0.5)', 
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
                     }
                 }
-            }
-        });
-    </script>
+            });
+        </script>
+    <% } %>
 </body>
 </html>
