@@ -20,6 +20,5 @@ SQL Database -
 
 
 <!-- for dataset change in bash  -->
-curl -X POST http://localhost:3000/switch-dataset \
--H "Content-Type: application/json" \
--d '{"dataset": "case1"}'
+$ curl -X POST http://localhost:3000/switch-dataset -H "Content-Type: application/json" -d '{"dataset": "3"}'
+{"message":"Dataset switched to 3"}
