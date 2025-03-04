@@ -35,7 +35,7 @@
     <!-- Main Content -->
     <div class="main-container">
         <aside class="sidebar">
-            <h2 class="sidebar-title" style="color:black; margin-top: 40px;">Alerts</h2>
+            <h2 class="sidebar-title" style="color:rgb(255, 251, 251); margin-top: 40px;">Alerts</h2>
 
             <div class="search-map">
                 <form action="/search" method="GET" class="search-form">
@@ -59,10 +59,10 @@
                                 <p class="District"><%= dam.district %></p>
                                 <p class="water-level"><%= dam.waterLevel %>m</p>
                                 <div class="storage-info">
+                                    <span class="storage-label">Storage -</span>
                                     <span class="storage-percent">
                                         <%= ((dam.waterLevel / (dam.maxLevel || 20)) * 100).toFixed(2) %>%
                                     </span>
-                                    <span class="storage-label">Storage %</span>
                                 </div>
                             </div>
                         </button>
@@ -79,51 +79,67 @@
         </main>
     </div>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <p>Ajeenkya D.Y.Patil School Of Engineering</p>
-    </footer>
 
     <!-- Map & Deck.gl Integration -->
     <script>
         fetch('/map-key')
-            .then(response => response.json())
-            .then(data => {
-                if (!data.apiKey) {
-                    console.error("API Key is missing");
-                    alert("Failed to load map. API key missing.");
-                    return;
-                }
-    
-                const coordinates = JSON.parse('<%- JSON.stringify(coordinates || []) %>');
-    
-                const map = new maplibregl.Map({
-                    container: 'map',
-                    style: `https://api.maptiler.com/maps/streets/style.json?key=${data.apiKey}`,
-                    center: coordinates.length > 0 ? [coordinates[0].lng, coordinates[0].lat] : [78.9629, 20.5937],
-                    zoom: 5,
-                    scrollZoom: true
-                });
-    
-                map.scrollZoom.enable();
-                map.addControl(new maplibregl.NavigationControl(), 'top-right');
-    
-                coordinates.forEach(coord => {
-                    if (coord.lng && coord.lat) {
-                        new maplibregl.Marker()
-                            .setLngLat([coord.lng, coord.lat])
-                            .addTo(map);
-                    }
-                });
-    
-            })
-            .catch(error => {
-                console.error("Error fetching API key:", error);
-                alert("Error loading map. Please try again.");
-            });
-    </script>
-    
-    
+    .then(response => response.json())
+    .then(data => {
+        if (!data.apiKey) {
+            console.error("API Key is missing");
+            alert("Failed to load map. API key missing.");
+            return;
+        }
 
+        const coordinates = JSON.parse('<%- JSON.stringify(coordinates || []) %>');
+
+        const map = new maplibregl.Map({
+            container: 'map',
+            style: `https://api.maptiler.com/maps/streets/style.json?key=${data.apiKey}`,
+            center: coordinates.length > 0 ? [coordinates[0].lng, coordinates[0].lat] : [78.9629, 20.5937],
+            zoom: 5,
+            scrollZoom: true
+        });
+
+        map.scrollZoom.enable();
+        map.addControl(new maplibregl.NavigationControl(), 'top-right');
+
+        // Define color logic based on water level
+        coordinates.forEach(coord => {
+            if (coord.lng && coord.lat) {
+                let markerColor;
+
+                if (coord.waterLevel < 3) {
+                    markerColor = "#dc2626"; // Red for critical
+                } else if (coord.waterLevel < 5) {
+                    markerColor = "#f97316"; // Orange for low
+                } else {
+                    markerColor = "#16a34a"; // Green for normal
+                }
+
+                // Debugging: Check color assignments
+                console.log(`Water Level: ${coord.waterLevel}, Color: ${markerColor}`);
+
+                // Create a custom marker element
+                const markerElement = document.createElement('div');
+                markerElement.className = 'custom-marker';
+                markerElement.style.backgroundColor = markerColor;
+                markerElement.style.width = '14px';
+                markerElement.style.height = '14px';
+                markerElement.style.borderRadius = '50%';
+                markerElement.style.border = '2px solid white';
+
+                new maplibregl.Marker(markerElement)
+                    .setLngLat([coord.lng, coord.lat])
+                    .addTo(map);
+            }
+        });
+
+    })
+    .catch(error => {
+        console.error("Error fetching API key:", error);
+        alert("Error loading map. Please try again.");
+    });
+    </script>
 </body>
 </html>
