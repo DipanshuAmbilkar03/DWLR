@@ -46,30 +46,34 @@
 
             <div class="alerts-container">
                 <% if (anomalies && anomalies.length > 0) { %>
-                    <% anomalies.forEach(dam => { %>
-                        <% let alertClass = dam.waterLevel < 3 ? "red" : (dam.waterLevel < 5 ? "orange" : "green"); %>
-                        <button type="button" class="alert-card <%= alertClass %>" onclick="loadGraph('<%= dam.id %>', '<%= dam.state %>', '<%= dam.waterLevel %>', '<%= dam.maxLevel || 20 %>');">
+                    <% anomalies.forEach(dam => { 
+                        let alertClass, alertLabel;
+                        if (dam.waterLevel < 3) {
+                            alertClass = "red";      // Critical
+                            alertLabel = "Critical";
+                        } else if (dam.waterLevel < 5) {
+                            alertClass = "orange";   // Low anomaly
+                            alertLabel = "Low";
+                        } else {
+                            alertClass = "yellow";   // Moderate anomaly
+                            alertLabel = "Moderate";
+                        }
+                    %>
+                        <button type="button" class="alert-card <%= alertClass %>" onclick="loadGraph('<%= dam.id %>', '<%= dam.state %>', '<%= dam.waterLevel %>', '10');">
                             <div class="alert-header">
                                 <h3 class="dam-name"><%= dam.state %></h3>
-                                <span class="alert-label-<%= alertClass %>">
-                                    <%= dam.waterLevel < 3 ? "Critical" : (dam.waterLevel < 5 ? "Low" : "Normal") %>
-                                </span>
+                                <span class="alert-label-<%= alertClass %>"><%= alertLabel %></span>
                             </div>                                
                             <div class="alert-content">
                                 <p class="District"><%= dam.district %></p>
                                 <p class="water-level"><%= dam.waterLevel %>m</p>
-                                <div class="storage-info">
-                                    <span class="storage-label">Storage -</span>
-                                    <span class="storage-percent">
-                                        <%= ((dam.waterLevel / (dam.maxLevel || 20)) * 100).toFixed(2) %>%
-                                    </span>
-                                </div>
                             </div>
                         </button>
                     <% }); %>
                 <% } else { %>
                     <p class="no-alerts">No anomalies detected.</p>
-                <% } %>                    
+                <% } %>
+                                    
             </div>
         </aside>
 
@@ -104,37 +108,36 @@
         map.scrollZoom.enable();
         map.addControl(new maplibregl.NavigationControl(), 'top-right');
 
-        // Define color logic based on water level
         coordinates.forEach(coord => {
-            if (coord.lng && coord.lat) {
-                let markerColor;
+        if (coord.lng && coord.lat) {
+            let markerColor;
 
-                if (coord.waterLevel < 3) {
-                    markerColor = "#dc2626"; // Red for critical
-                } else if (coord.waterLevel < 5) {
-                    markerColor = "#f97316"; // Orange for low
-                } else {
-                    markerColor = "#16a34a"; // Green for normal
-                }
-
-                // Debugging: Check color assignments
-                console.log(`Water Level: ${coord.waterLevel}, Color: ${markerColor}`);
-
-                // Create a custom marker element
-                const markerElement = document.createElement('div');
-                markerElement.className = 'custom-marker';
-                markerElement.style.backgroundColor = markerColor;
-                markerElement.style.width = '14px';
-                markerElement.style.height = '14px';
-                markerElement.style.borderRadius = '50%';
-                markerElement.style.border = '2px solid white';
-
-                new maplibregl.Marker(markerElement)
-                    .setLngLat([coord.lng, coord.lat])
-                    .addTo(map);
+            if (coord.waterLevel < 3) {
+                markerColor = "#dc2626"; // Red for Critical
+            } else if (coord.waterLevel < 5) {
+                markerColor = "#f97316"; // Orange for Low
+            } else {
+                markerColor = "#facc15"; // Yellow for Moderate anomaly
             }
-        });
 
+            // Debug: Log the water level and chosen color
+            console.log(`Water Level: ${coord.waterLevel}, Color: ${markerColor}`);
+
+            // Create custom marker element
+            const markerElement = document.createElement('div');
+            markerElement.className = 'custom-marker';
+            markerElement.style.backgroundColor = markerColor;
+            markerElement.style.width = '14px';
+            markerElement.style.height = '14px';
+            markerElement.style.borderRadius = '50%';
+            markerElement.style.border = '2px solid white';
+
+            new maplibregl.Marker(markerElement)
+                .setLngLat([coord.lng, coord.lat])
+                .addTo(map);
+        }
+    });
+    
     })
     .catch(error => {
         console.error("Error fetching API key:", error);
