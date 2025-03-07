@@ -17,10 +17,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Default dataset
 let currentDataset = case1Data;
 
-// Function to detect anomalies based on "WATER" level
 function detectAnomalies(data) {
     const anomalies = [];
+
     data.forEach(row => {
+        console.log("Processing row:", row); // Debugging
+        console.log("Row ID:", row.ID); // Check if ID exists
+
         if (row.WATER !== undefined && row.LATITUDE !== undefined && row.LONGITUDE !== undefined) {
             if (parseFloat(row.WATER) < 10) {
                 anomalies.push({
@@ -33,8 +36,8 @@ function detectAnomalies(data) {
                     lng: row.LONGITUDE,
                     wellType: row.WellType,
                     waterLevel: parseFloat(row.WATER),
-                    message: 'Water level is below the threshold!',
-                    id: row.ID,
+                    message: "Water level is below the threshold!",
+                    id: row.ID ?? "N/A", 
                 });
             }
         }
@@ -75,7 +78,6 @@ app.post('/switch-dataset', (req, res) => {
 app.get('/alerts', (req, res) => {
     const anomalies = detectAnomalies(currentDataset);
     console.log("MAP_API_KEY:", process.env.MAP_API_KEY);
-
     const coordinates = anomalies.map(({ lat, lng }) => ({ lat: Number(lat), lng: Number(lng) }));
 
     console.log("Coordinates:", coordinates);
@@ -85,6 +87,13 @@ app.get('/alerts', (req, res) => {
         coordinates,  // Now directly passed as an object
         MAP_API_KEY: process.env.MAP_API_KEY,
     });
+});
+
+app.get("/a", (req, res) => {
+    console.log("First row ID:", currentDataset[0]?.ID);
+    const anomalies = detectAnomalies(currentDataset);
+    console.log("Anomalies:", anomalies); 
+    res.json({ anomalies }); 
 });
 
 // Start server
