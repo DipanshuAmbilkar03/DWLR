@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 require('dotenv').config();
+const sendMessage = require("./index.js"); 
 
 // Import datasets
 const { case1Data, case2Data, case3Data, case4Data, initialData } = require("./model/data.js");
@@ -21,9 +22,6 @@ function detectAnomalies(data) {
     const anomalies = [];
 
     data.forEach(row => {
-        console.log("Processing row:", row); // Debugging
-        console.log("Row ID:", row.ID); // Check if ID exists
-
         if (row.WATER !== undefined && row.LATITUDE !== undefined && row.LONGITUDE !== undefined) {
             if (parseFloat(row.WATER) < 10) {
                 anomalies.push({
@@ -75,16 +73,46 @@ app.post('/switch-dataset', (req, res) => {
     res.status(200).json({ message: `Dataset switched to ${dataset}` });
 });
 
-app.get('/alerts', (req, res) => {
+smsLimit = [];
+const officerNumber = "+919893451938";
+
+app.get('/alerts', async (req, res) => {
     const anomalies = detectAnomalies(currentDataset);
     console.log("MAP_API_KEY:", process.env.MAP_API_KEY);
     const coordinates = anomalies.map(({ lat, lng }) => ({ lat: Number(lat), lng: Number(lng) }));
+
+    if (anomalies.length > 0) {
+        const criticalAnomalies = anomalies.filter(a => a.waterLevel < 3);
+        
+        if (criticalAnomalies.length > 0) {
+            const district = criticalAnomalies[0].district;
+
+            if (!smsLimit[district]) {
+                smsLimit[district] = 0;
+            }
+
+            if (smsLimit[district] < 3) {
+                const messageBody = `🚨 Alert! Critical water level drop detected in ${district}, ${criticalAnomalies[0].state}. Immediate action required.`;
+                console.log(`Sending SMS to ${officerNumber}: ${messageBody}`);
+
+                try {
+                    await sendMessage(officerNumber, messageBody);
+                    smsLimit[district]++;
+                    console.log(`SMS sent. Count: ${smsLimit[district]}`);
+                } catch (error) {
+                    console.error("Failed to send SMS:", error);
+                }
+            } else {
+                console.log(`SMS limit reached for ${district}. No more messages.`);
+            }
+        }
+    }
 
     console.log("Coordinates:", coordinates);
     res.render('test', {
         message: anomalies.length > 0 ? 'Anomalies detected!' : 'No anomalies detected.',
         anomalies,
-        coordinates,  // Now directly passed as an object
+        coordinates,
         MAP_API_KEY: process.env.MAP_API_KEY,
     });
 });
