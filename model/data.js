@@ -99,7 +99,7 @@ const case1Data = [
       "LATITUDE": "25.4905556",
       "LONGITUDE": "76.6558333",
       "WellType": "Dug Well",
-      "WATER": 5.55,  // >= 5 and < 10 → Moderate
+      "WATER": 4.9,  // >= 5 and < 10 → Moderate
       "ID": "78138e36"
     },
     {
