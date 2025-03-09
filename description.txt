@@ -1,0 +1,25 @@
+Checks - 
+    1) Don't uncomment the insertInitialData() function 
+    2  If done then use => delete from gwl; in sql CLI
+
+run command node --watch database.js
+
+check database command ->
+    1}Select * FROM gwl \G;
+
+SQL Database -
+
++----------------------+
+| Tables_in_pbl_data   |
++----------------------+
+| demo                 |
+| gwl                  |
+| water_level_analysis |
+| waterlvl             |
++----------------------+
+
+
+<!-- for dataset change in bash  -->
+curl -X POST http://localhost:3000/switch-dataset \
+-H "Content-Type: application/json" \
+-d '{"dataset": "1"}'
