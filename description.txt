@@ -23,3 +23,7 @@ SQL Database -
 curl -X POST http://localhost:3000/switch-dataset \
 -H "Content-Type: application/json" \
 -d '{"dataset": "1"}'
+
+
+- twilio - 
+    --> after 72 hours resubmit the twilio console for sandbox updatation. 
