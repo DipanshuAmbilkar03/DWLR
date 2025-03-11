@@ -1,25 +1,42 @@
-Checks - 
-    1) Don't uncomment the insertInitialData() function 
-    2  If done then use => delete from gwl; in sql CLI
+# 🌊 DWLR Water Level Alert System
 
-run command node --watch database.js
+A software application for analyzing DWLR (Digital Water Level Recorder) data and raising alerts for anomalies.
 
-check database command ->
-    1}Select * FROM gwl \G;
+## 📌 Problem Statement
 
-SQL Database -
+The Central Ground Water Board (CGWB) is deploying **14,000 Digital Water Level Recorders (DWLRs)** to monitor groundwater levels.  
+Each DWLR records **4 water level data points per day**, generating a vast amount of data.  
+Analyzing this manually is inefficient, so an automated system is required.
 
-+----------------------+
-| Tables_in_pbl_data   |
-+----------------------+
-| demo                 |
-| gwl                  |
-| water_level_analysis |
-| waterlvl             |
-+----------------------+
+## 💡 Solution
 
+This software automatically detects anomalies such as:
+- 📉 Extremely low water levels
+- ❌ Faulty DWLRs (no data recorded)
 
-<!-- for dataset change in bash  -->
-curl -X POST http://localhost:3000/switch-dataset \
--H "Content-Type: application/json" \
--d '{"dataset": "1"}'
+When anomalies are found, **SMS alerts** 📩 are sent to the concerned officers.
+
+## 🚀 Features
+✅ **Anomaly Detection** – Identifies abnormal groundwater levels.  
+✅ **Alert System** – Sends SMS notifications to officers.  
+✅ **Interactive Map** – Visual representation of water levels.  
+✅ **Dataset Switching** – Load different test datasets.  
+✅ **REST API** – Fetch alerts and map data programmatically.  
+
+## 🛠️ Tech Stack
+
+- **Backend:** Node.js, Express.js
+- **Frontend:** EJS, HTML, CSS
+- **Database:** JSON-based dataset
+- **Maps:** MapLibre, MapTiler SDK
+- **SMS Alerts:** Twilio API
+
+## 📥 Installation
+
+Clone the repository and install dependencies:
+
+```bash
+git clone https://github.com/your-repo/DWLR-Alert-System.git
+cd DWLR-Alert-System
+npm install
+npm start
