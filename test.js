@@ -78,6 +78,7 @@ const officerNumber = "+919893451938";
 
 app.get('/alerts', async (req, res) => {
     const anomalies = detectAnomalies(currentDataset);
+    console.log(anomalies);
     console.log("MAP_API_KEY:", process.env.MAP_API_KEY);
     const coordinates = anomalies.map(({ lat, lng }) => ({ lat: Number(lat), lng: Number(lng) }));
 
