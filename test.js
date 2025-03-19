@@ -4,18 +4,15 @@ const path = require('path');
 require('dotenv').config();
 const sendMessage = require("./index.js"); 
 
-// Import datasets
 const { case1Data, case2Data, case3Data, case4Data, initialData } = require("./model/data.js");
 
 const app = express();
 app.use(bodyParser.json());
 
-// Set EJS as the view engine
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Default dataset
 let currentDataset = case1Data;
 
 function detectAnomalies(data) {
@@ -76,6 +73,7 @@ app.post('/switch-dataset', (req, res) => {
 smsLimit = [];
 const officerNumber = "+919893451938";
 
+// twilio to sandbox 
 app.get('/alerts', async (req, res) => {
     const anomalies = detectAnomalies(currentDataset);
     console.log(anomalies);
@@ -123,6 +121,11 @@ app.get("/a", (req, res) => {
     const anomalies = detectAnomalies(currentDataset);
     console.log("Anomalies:", anomalies); 
     res.json({ anomalies }); 
+});
+
+
+app.get('/', (req, res) => {
+    res.render('home'); // If using EJS
 });
 
 // Start server
