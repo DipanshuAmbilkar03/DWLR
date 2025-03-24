@@ -7,48 +7,44 @@
     <link rel="stylesheet" href="home.css">
 </head>
 <body>
-
-    <div class="container">
-        <div class="sidebar left">
-            <div class="box">
-                <h3>अधिदेश</h3>
-                <p>
-                    भारत के भूजल संसाधनों के आर्थिक एवं पारिस्थितिकी...
-                </p>
+    <header class="header">
+        <nav class="nav-bar">
+            <p class="logo">Home</p>
+            <div class="nav-links">
+                <a href="http://localhost:3000/alerts">Alerts</a>
+                <a href="http://localhost:3000/about">About</a>
+                <a href="http://localhost:3000/profile">Profile</a>
+                <a href="http://localhost:3000/help">Help</a>
             </div>
-            <div class="box">
-                <h3>भविष्य दृष्टि</h3>
-                <p>
-                    देश के भूजल संसाधनों का स्थायी विकास और प्रबंधन...
-                </p>
-            </div>
-        </div>
+        </nav>
+    </header>
 
-        <div class="slider-container">
-            <div class="slider">
-                <!-- <div class="slide"><img src="/assets/dwlr_1.jpg" alt="Image 1"></div> -->
-                <!-- <div class="slide"><img src="/assets/dwlr_2.webp" alt="Image 2"></div> -->
-                <!-- <div class="slide"><img src="/assets/dwlr_3.jpg" alt="Image 3"></div> -->
-                <div class="slide"><img src="/assets/dwlr_4.jpg" alt="Image 4"></div>
-                <div class="slide"><img src="/assets/dwlr_5.jpg" alt="Image 5"></div>
-                <div class="slide"><img src="/assets/dwlr_6.jpg" alt="Image 6"></div>
-                <div class="slide"><img src="/assets/dwlr_7.jpg" alt="Image 7"></div>
+    <div class="main-container">
+        <aside class="side-bar">
+            <p>Sidebar</p>
+        </aside>
+    
+        <main class="main">
+            <h2>Image Slider</h2>
+            <div class="slider-container">
+                <button class="prev" onclick="prevSlide()">&#10094;</button>
+                <div class="slider">
+                    <img src="../public/assets/two.jpg" class="slide" alt="Image 1">
+                    <img src="image2.jpg" class="slide" alt="Image 2">
+                    <img src="image3.jpg" class="slide" alt="Image 3">
+                </div>
+                <button class="next" onclick="nextSlide()">&#10095;</button>
             </div>
-            <button class="prev" onclick="prevSlide()">&#10094;</button>
-            <button class="next" onclick="nextSlide()">&#10095;</button>
-        </div>
+        </main>
 
-        <div class="sidebar right">
-            <h3>नया क्या है</h3>
-            <ul>
-                <li>भारत में स्टेबल आइसोटोप डेटा व्याख्या...</li>
-                <li>भूजल स्रोतों की स्थिति के लिए मानक संचालन...</li>
-                <li>भूजल संसाधन आकलन 2022...</li>
-                <li>भूजल संवाद, जनवरी - जून, 2023...</li>
-            </ul>
-            <button>View All</button>
-        </div>
+        <aside class="right-sidebar">
+            <p>Sidebar</p>
+        </aside>
     </div>
+
+    <footer class="footer">
+        <p>Footer &copy; 2025</p>
+    </footer>
 
     <script src="homescript.js"></script>
 </body>
