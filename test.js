@@ -8,6 +8,7 @@ const { case1Data, case2Data, case3Data, case4Data, initialData } = require("./m
 
 const app = express();
 app.use(bodyParser.json());
+app.use(express.static('views'));
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
