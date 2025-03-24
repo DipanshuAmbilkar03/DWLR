@@ -117,6 +117,14 @@ app.get('/alerts', async (req, res) => {
     });
 });
 
+app.get("/about",(req,res) => {
+    res.render("about.ejs");
+})
+
+app.get("/help",(req,res) => {
+    res.render("help.ejs");
+})
+
 app.get("/a", (req, res) => {
     console.log("First row ID:", currentDataset[0]?.ID);
     const anomalies = detectAnomalies(currentDataset);
