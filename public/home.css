@@ -9,12 +9,15 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    background: #BDDDFC; /* Soft sky blue */
+    color: #384959; /* Dark blue-gray for contrast */
 }
 
 .header {
-    background: #e65e5e;
+    background: #384959; /* Dark Grayish Blue */
     width: 100%;
-    padding: 10px 0;
+    padding: 15px 0;
+    color: white;
 }
 
 .nav-bar {
@@ -27,7 +30,7 @@ body {
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
-    color: white;
+    color: #BDDDFC; /* Soft Sky Blue */
 }
 
 .nav-links a {
@@ -52,7 +55,7 @@ body {
 }
 
 .side-bar, .right-sidebar {
-    background: #f98d8d;
+    background: #6A89A7; /* Muted Blue-Gray */
     width: 20%;
     padding: 15px;
     color: white;
@@ -61,14 +64,15 @@ body {
 }
 
 .main { 
-    background: #f2e0e0;
+    background: #88BDF2; /* Light Blue */
     flex-grow: 1;
     padding: 20px;
     text-align: center;
+    border-radius: 10px;
 }
 
 .footer {
-    background: #2baccf;
+    background: #384959; /* Dark Grayish Blue */
     color: white;
     text-align: center;
     padding: 10px;
@@ -89,3 +93,64 @@ body {
         text-align: center;
     }
 }
+
+/* Image Slider */
+.slider-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    width: 80%;
+    margin: auto;
+    position: relative;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    width: 400px;
+    height: 250px;
+    object-fit: cover;
+    margin: 0 5px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+}
+
+/* Button Styles */
+.prev, .next {
+    background: #6A89A7;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 20px;
+    transition: 0.3s;
+}
+
+.prev:hover, .next:hover {
+    background: #88BDF2;
+}
+.slider-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    width: 80%;
+    margin: auto;
+    position: relative;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    
+}
+
+.slide {
+    max-width: 100%;
+    height: auto;
+}
+
