@@ -1,3 +1,4 @@
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -37,8 +38,21 @@ header {
     border-radius: 5px;
     font-weight: bold;
 }
+
+.alert-badge {
+    display: inline-block;
+    padding: 5px 15px;
+    border-radius: 20px;
+    color: white;
+    font-weight: bold;
+}
+
+/* .critical { background: #dc2626; }
+.low { background: #f97316; }
+.moderate { background: #facc15; }
+.normal { background: #16a34a; } */
 .critical { background-color: #dc2626; color: white; }
-.moderate { background-color: #facc15; color: black; }
+.moderate { background-color: #16a34a; color: black; }
 .low { background-color: #f97316; color: white; }
 .normal { background-color: #16a34a; color: white; }
 .back-btn {
