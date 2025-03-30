@@ -24,11 +24,11 @@
             <p><strong>Well Type:</strong> <%= anomaly?.wellType || 'N/A' %></p>
             <p><strong>Water Level:</strong> <%= anomaly?.waterLevel || 'N/A' %>m</p>
             <p><strong>Message:</strong> <%= anomaly?.message || 'No alert message' %></p>
-            <p><strong>Timestamp:</strong> <%= anomaly?.timestamp || 'Unknown' %></p>
+            <p><strong>Water Level:</strong> <%= anomaly?.waterLevel || 'N/A' %>m</p>
             
             <p>
-                <span class="alert-status <%= anomaly?.alertClass || 'normal' %>">
-                    <%= anomaly?.alertLabel || 'Normal' %>
+                <span class="alert-badge <%= anomaly?.waterLevel < 3 ? 'critical' : anomaly?.waterLevel < 5 ? 'low' : anomaly?.waterLevel < 10 ? 'moderate' : 'normal' %>">
+                    <%= anomaly?.waterLevel < 3 ? 'Critical' : anomaly?.waterLevel < 5 ? 'Low' : anomaly?.waterLevel < 10 ? 'Moderate' : 'Normal' %>
                 </span>
             </p>
 
