@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Alert Details</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/data.css">
+</head>
+<body>
+    <header>
+        DWLR - Alert Details
+    </header>
+
+    <div class="alert-container">
+        <div class="alert-box">
+            <div class="alert-header">Details for ID: <%= body %></div>
+            <p><strong>State:</strong> <%= anomaly?.state || 'N/A' %></p>
+            <p><strong>District:</strong> <%= anomaly?.district || 'N/A' %></p>
+            <p><strong>Tehsil:</strong> <%= anomaly?.tehsil || 'N/A' %></p>
+            <p><strong>Village:</strong> <%= anomaly?.village || 'N/A' %></p>
+            <p><strong>Site:</strong> <%= anomaly?.site || 'N/A' %></p>
+            <p><strong>Latitude:</strong> <%= anomaly?.lat || 'N/A' %></p>
+            <p><strong>Longitude:</strong> <%= anomaly?.lng || 'N/A' %></p>
+            <p><strong>Well Type:</strong> <%= anomaly?.wellType || 'N/A' %></p>
+            <p><strong>Water Level:</strong> <%= anomaly?.waterLevel || 'N/A' %>m</p>
+            <p><strong>Message:</strong> <%= anomaly?.message || 'No alert message' %></p>
+            <p><strong>Timestamp:</strong> <%= anomaly?.timestamp || 'Unknown' %></p>
+            
+            <p>
+                <span class="alert-status <%= anomaly?.alertClass || 'normal' %>">
+                    <%= anomaly?.alertLabel || 'Normal' %>
+                </span>
+            </p>
+
+            <a href="/alerts" class="back-btn">&#8592; Back to Alerts</a>
+        </div>
+    </div>
+</body>
+</html>
