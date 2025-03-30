@@ -125,7 +125,7 @@ h1, h2, h3 {
 
 /* Alert Levels */
 .alert-card.red { background: #ff4d4d; border-left-color: #b91c1c; color: rgb(22, 21, 21); }
-.alert-card.orange { background: #ffa500; border-left-color: #c2410c; color: rgb(0, 0, 0); }
+.alert-card.orange { background: #ffb01e; border-left-color: #c2410c; color: rgb(0, 0, 0); }
 .alert-card.green { background: #28a745; border-left-color: #166534; color: rgb(0, 0, 0); }
 
 /* Alert Labels */
