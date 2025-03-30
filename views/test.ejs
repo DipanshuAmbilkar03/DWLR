@@ -35,15 +35,16 @@
     <!-- Main Content -->
     <div class="main-container">
         <aside class="sidebar">
-            <h2 class="sidebar-title" style="color:rgb(255, 251, 251); margin-top: 40px;">Alerts</h2>
+            <div class="heading_search">
+                <h2 class="sidebar-title" style="color:rgb(255, 251, 251); margin-top: 40px;">Alerts</h2>
 
-            <div class="search-map">
-                <form action="/search" method="GET" class="search-form">
-                    <input type="text" name="q" placeholder="Search for a location..." required>
-                    <button class="search-btn" type="submit">Search</button>
-                </form>                                      
+                <div class="search-map" >
+                    <form action="/search" method="GET" class="search-form">
+                        <input type="text" name="q" placeholder="Search for a location..." required>
+                        <button class="search-btn" type="submit">Search</button>
+                    </form>                                      
+                </div>
             </div>
-
             <form action="/alert/<%= anomalies.id%>/submit" method="POST" >
                 <div class="alerts-container">
                     <% if (anomalies && anomalies.length > 0) { %>
@@ -69,9 +70,8 @@
                                     <span class="alert-label-<%= alertClass %>"><%= alertLabel %></span>
                                 </div>
                                 <div class="alert-content">
-                                    <p class="District"><%= dam.district %></p>
+                                    <b><p class="District"><%= dam.district %></p></b>
                                     <p class="water-level"><%= dam.waterLevel %>m</p>
-                                    <p class="Location"><%= dam.id %></p>
                                 </div>
                             </button>
                         <% }); %>
