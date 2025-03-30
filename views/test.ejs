@@ -44,40 +44,42 @@
                 </form>                                      
             </div>
 
-            <div class="alerts-container">
-                <% if (anomalies && anomalies.length > 0) { %>
-                    <% anomalies.forEach(dam => { 
-                        let alertClass, alertLabel;
-                        if (dam.waterLevel < 3) {
-                            alertClass = "red";      // Critical
-                            alertLabel = "Critical";
-                        } else if (dam.waterLevel >= 3 && dam.waterLevel < 5) {
-                            alertClass = "orange";   // Low anomaly
-                            alertLabel = "Low";
-                        } else if (dam.waterLevel >= 5 && dam.waterLevel < 10) {
-                            alertClass = "yellow";   // Moderate anomaly
-                            alertLabel = "Moderate";
-                        } else {
-                            alertClass = "green";    // Normal water level
-                            alertLabel = "Normal";
-                        }
-                    %>
-                        <button type="button" class="alert-card <%= alertClass %>" onclick="loadGraph('<%= dam.id %>', '<%= dam.state %>', '<%= dam.waterLevel %>', '10');">
+            <form action="/alert/<%= anomalies.id%>/submit" method="POST" >
+                <div class="alerts-container">
+                    <% if (anomalies && anomalies.length > 0) { %>
+                        <% anomalies.forEach(dam => { 
+                            let alertClass, alertLabel;
+                            if (dam.waterLevel < 3) {
+                                alertClass = "red";      // Critical
+                                alertLabel = "Critical";
+                            } else if (dam.waterLevel >= 3 && dam.waterLevel < 5) {
+                                alertClass = "orange";   // Low anomaly
+                                alertLabel = "Low";
+                            } else if (dam.waterLevel >= 5 && dam.waterLevel < 10) {
+                                alertClass = "yellow";   // Moderate anomaly
+                                alertLabel = "Moderate";
+                            } else {
+                                alertClass = "green";    // Normal water level
+                                alertLabel = "Normal";
+                            }
+                        %>
+                        <button type="button" class="alert-card <%= alertClass %>" onclick="opener.viewDetails('<%= dam.id %>')">
                             <div class="alert-header">
-                                <h3 class="dam-name"><%= dam.state %></h3>
-                                <span class="alert-label-<%= alertClass %>"><%= alertLabel %></span>
-                            </div>
-                            <div class="alert-content">
-                                <p class="District"><%= dam.district %></p>
-                                <p class="water-level"><%= dam.waterLevel %>m</p>
-                                <p class="Location"><%= dam.latitude %></p>
-                            </div>
-                        </button>
-                    <% }); %>
-                <% } else { %>
-                    <p class="no-alerts">No anomalies detected.</p>
-                <% } %>             
-            </div>
+                                    <h3 class="dam-name"><%= dam.state %></h3>
+                                    <span class="alert-label-<%= alertClass %>"><%= alertLabel %></span>
+                                </div>
+                                <div class="alert-content">
+                                    <p class="District"><%= dam.district %></p>
+                                    <p class="water-level"><%= dam.waterLevel %>m</p>
+                                    <p class="Location"><%= dam.id %></p>
+                                </div>
+                            </button>
+                        <% }); %>
+                    <% } else { %>
+                        <p class="no-alerts">No anomalies detected.</p>
+                    <% } %>             
+                </div>
+            </form>
         </aside>
 
         <!-- Map Section -->
@@ -85,7 +87,6 @@
             <div id="map"></div>
         </main>
     </div>
-
 
     <!-- Map & Deck.gl Integration -->
     <script>
@@ -145,5 +146,7 @@
                 alert("Error loading map. Please try again.");
             });
     </script>
+    <script src="/js/card_dataOnClick.js"></script>
+
 </body>
 </html>
