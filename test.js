@@ -132,6 +132,19 @@ app.get("/a", (req, res) => {
     res.json({ anomalies }); 
 });
 
+app.get("/alert/:id", (req, res) => {
+    const id = req.params.id;
+    console.log("Selected ID:", id);
+
+    const anomalies = detectAnomalies(currentDataset);
+    const anomaly = anomalies.find(a => a.id == id) || null;
+
+    res.render("data.ejs", { anomaly, body: id });
+});
+
+app.post("/alert/:id/submit" ,(req,res) => {
+    res.redirect("/alert/:id");
+})
 
 app.get('/', (req, res) => {
     res.render('home'); // If using EJS
