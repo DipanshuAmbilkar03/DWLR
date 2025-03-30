@@ -203,3 +203,17 @@ h1, h2, h3 {
 .custom-marker:hover {
     transform: scale(1.2);
 }
+
+.heading_search {
+    background-color:rgb(22, 21, 21);
+    position: sticky;
+    top: 0;
+    opacity: 1;
+    z-index: 10; 
+    padding: 10px;
+    width: 100%;
+}
+
+.sidebar {
+    overflow-y: auto; /* Allows scrolling if needed */
+}
