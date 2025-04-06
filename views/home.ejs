@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Custom Slider</title>
+    <title>DWLR Groundwater Monitoring</title>
     <link rel="stylesheet" href="home.css">
 </head>
 <body>
+
+    <!-- Header Section -->
     <header class="header">
         <nav class="nav-bar">
             <p class="logo">Home</p>
@@ -20,40 +22,52 @@
     </header>
 
     <div class="main-container">
-        <aside class="side-bar">
-            <p>Sidebar</p>
-        </aside>
     
+        <aside class="side-bar">
+            <h3>DWLR Updates</h3>
+            <div class="flashing-news">
+                <marquee behavior="scroll" direction="up" scrollamount="3">
+                    <p>Govt to install 200 new DWLR sensors nationwide!</p>
+                    <p>Groundwater levels drop by 5% in northern regions.</p>
+                    <p>DWLR devices upgraded to improve accuracy by 15%.</p>
+                    <p>Real-time monitoring system now available online.</p>
+                    <p>Early warning alerts for critical groundwater depletion!</p>
+                </marquee>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
         <main class="main">
-            <h2>Image Slider</h2>
-            <div class="slider-container">
-                <button class="prev" onclick="prevSlide()">&#10094;</button>
-                <div class="slider">
-                    <!-- <img src="/assets/seven.jpg" class="slide" alt="Image 1">
-                    <img src="/assets/one.jpg" class="slide" alt="Image 2">
-                    <img src="/assets/two.jpg" class="slide" alt="Image 3">
-                    <img src="/assets/three.jpg" class="slide" alt="Image 1">
-                    <img src="/assets/four.jpg" class="slide" alt="Image 2">
-                    <img src="/assets/five.jpg" class="slide" alt="Image 3">
-                    <img src="/assets/six.jpg" class="slide" alt="Image 1">
-                    <img src="/assets/eight.jpg" class="slide" alt="Image 2">
-                    <img src="/assets/nine.jpg" class="slide" alt="Image 3">
-                    -->
-                    <img class="slide" src="/assets/imout.gif" alt="GIF Slide">
-                </div>
-                
-                <button class="next" onclick="nextSlide()">&#10095;</button>
-            </div><br>
-            <p> <b>yha pe image slider banana hai @varun </b></p>
+            <h2>DWLR Monitoring in Action</h2>
+            
+            <p><b>Digital Water Level Recorder (DWLR)</b> devices are critical for monitoring groundwater levels. They provide real-time data to help prevent over-extraction and ensure sustainable water management.</p>
+            <div class="image-gallery">
+                <img src="./assets/dwlr_5.jpg" alt="DWLR Station">
+                <img src="./assets/dwlr_7.jpg" alt="DWLR Sensor">
+                <img src="./assets/dwlr_4.jpg" alt="DWLR Data Graph">
+                <img src="./assets/dwlr_6.jpg" alt="Groundwater Monitoring">
+            </div>
         </main>
 
         <aside class="right-sidebar">
-            <p>Sidebar</p>
+            <h3> DWLR News & Reports</h3>
+            <div class="news-box">
+                <h4> Govt Launches New Groundwater Monitoring Program</h4>
+                <p>The government has introduced a nationwide groundwater monitoring system using DWLR devices to track water levels and prevent overuse.</p>
+                
+                <h4>Water Levels Declining in Key Areas</h4>
+                <p>Reports indicate a 5% decrease in groundwater reserves in high-risk regions, prompting urgent action from environmental agencies.</p>
+                
+                <h4>AI-Powered DWLR for Real-Time Alerts</h4>
+                <p>New AI-integrated DWLR devices can now send automatic SMS alerts for sudden groundwater depletion, improving water conservation efforts.</p>
+            </div>
         </aside>
+
     </div>
 
+    <!-- Footer Section -->
     <footer class="footer">
-        <p>Footer &copy; 2025</p>
+        <p>© 2025 DWLR Groundwater Monitoring System. All rights reserved.</p>
     </footer>
 
     <script src="homescript.js"></script>
