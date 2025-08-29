@@ -24,6 +24,12 @@ curl -X POST http://localhost:3000/switch-dataset \
 -H "Content-Type: application/json" \
 -d '{"dataset": "1"}'
 
+<!-- 
+    Invoke-WebRequest -Uri "http://localhost:3000/switch-dataset" 
+    -Method POST -Headers @{ "Content-Type" = "application/json" } 
+    -Body '{"dataset": "3"}'  
+-->
+
 
 - twilio - 
     --> after 72 hours resubmit the twilio console for sandbox updatation. 
