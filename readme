@@ -1,5 +1,4 @@
 # 🌊 DWLR Water Level Alert System
-
 A software application for analyzing DWLR (Digital Water Level Recorder) data and raising alerts for anomalies.
 
 ## 📌 Problem Statement
@@ -7,6 +6,8 @@ A software application for analyzing DWLR (Digital Water Level Recorder) data an
 The Central Ground Water Board (CGWB) is deploying **14,000 Digital Water Level Recorders (DWLRs)** to monitor groundwater levels.  
 Each DWLR records **4 water level data points per day**, generating a vast amount of data.  
 Analyzing this manually is inefficient, so an automated system is required.
+
+![alt text](image.png)
 
 ## 💡 Solution
 
